@@ -86,7 +86,7 @@ jobs:
         run: php artisan migrate --force
 
       - name: Running Aureus Installer
-        run: php artisan erp:install --no-interaction
+        run: php artisan erp:install --skip-env-check --skip-admin-creation --no-interaction
 
       - name: Start Laravel server
         run: |
