@@ -54,8 +54,16 @@ jobs:
         run: |
           while ! mysqladmin ping -h 127.0.0.1 -P ${{ job.services.mysql.ports['3306'] }} --silent; do
             echo "Waiting for MySQL to be ready..."
-            sleep 1
+            sleep 5
           done
+
+      - name: Debug MySQL Connection
+        run: |
+          echo "MySQL Host: 127.0.0.1"
+          echo "MySQL Port: ${{ job.services.mysql.ports['3306'] }}"
+          echo "MySQL Database: aureuserp"
+          echo "MySQL User: root"
+          echo "MySQL Password: root"
 
       - name: Setting Environment mysql
         run: |
