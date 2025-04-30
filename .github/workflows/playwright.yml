@@ -80,7 +80,7 @@ jobs:
           cat .env
 
       - name: Install Composer Dependencies
-        run: composer install --no-interaction
+        run: composer create-project 
 
       - name: Run Database Migrations
         run: php artisan migrate --force
