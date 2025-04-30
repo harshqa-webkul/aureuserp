@@ -103,8 +103,8 @@ async function createCustomer(adminPage) {
     /**
      * Clicking create button
      */
-    //await adminPage.getByRole('button', { name: 'Create' }).nth(3).click();
-    await adminPage.getByRole('button', { name: 'Create' }).click();
+    await adminPage.getByRole('button', { name: 'Create' }).nth(3).click();
+    //await adminPage.getByRole('button', { name: 'Create' }).click();
 
     /**
      * Selecting Account holder name from the drop down 

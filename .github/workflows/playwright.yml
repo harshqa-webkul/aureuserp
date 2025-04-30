@@ -52,11 +52,11 @@ jobs:
 
       - name: Install Node.js Dependencies
         run: npm install
-        working-directory: plugins/Webkul/playwright
+        working-directory: plugins/webkul/playwright
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-        working-directory: plugins/Webkul/playwright
+        working-directory: plugins/webkul/playwright
 
       - name: Setting Environment mysql
         run: |
@@ -88,7 +88,7 @@ jobs:
           BASE_URL: "http://127.0.0.1:8000"
         run: |
           npx playwright test --reporter=list --config=tests/e2e-pw/playwright.config.ts --shard=${{ matrix.shard-index }}/${{ matrix.shard-total }}
-        working-directory: plugins/Webkul/playwright
+        working-directory: plugins/webkul/playwright
 
       - name: Upload Test Results
         uses: actions/upload-artifact@v4
@@ -96,6 +96,6 @@ jobs:
         with:
           name: test-results-${{ matrix.shard-index }}-${{ github.run_id }}-${{ github.run_number }}
           path: |
-            plugins/Webkul/playwright/tests/e2e-pw/test-results
+            plugins/webkul/playwright/tests/e2e-pw/test-results
             storage/logs/laravel.log
           retention-days: 1
