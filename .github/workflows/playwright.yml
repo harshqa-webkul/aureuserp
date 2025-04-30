@@ -25,7 +25,7 @@ jobs:
 
     services:
       mysql:
-        image: mysql:8.0
+        image: mysql:5.7
         env:
           MYSQL_ROOT_PASSWORD: root
           MYSQL_DATABASE: aureuserp
@@ -52,10 +52,19 @@ jobs:
 
       - name: Wait for MySQL to be ready
         run: |
-          while ! mysqladmin ping -h 127.0.0.1 -P ${{ job.services.mysql.ports['3306'] }} --silent; do
-            echo "Waiting for MySQL to be ready..."
-            sleep 5
+          for i in {1..30}; do
+            if mysqladmin ping -h 127.0.0.1 -P ${{ job.services.mysql.ports['3306'] }} --silent; then
+              echo "MySQL is ready!"
+              break
+            else
+              echo "Waiting for MySQL ($i/30)..."
+              sleep 5
+            fi
           done
+          if ! mysqladmin ping -h 127.0.0.1 -P ${{ job.services.mysql.ports['3306'] }} --silent; then
+            echo "MySQL failed to start!"
+            exit 1
+          fi
 
       - name: Debug MySQL Connection
         run: |
@@ -78,8 +87,16 @@ jobs:
           sed -i "s|^\(APP_URL=\s*\).*$|\1http://127.0.0.1:8000|" .env
           cat .env
 
+      - name: Verify .env Configuration
+        run: |
+          grep DB_ .env
+          grep APP_ .env
+
       - name: Install Composer Dependencies
-        run: composer create-project
+        run: composer install --no-interaction
+
+      - name: Run Database Migrations
+        run: php artisan migrate --force
 
       - name: Running Aureus Installer
         run: php artisan erp:install --skip-env-check --skip-admin-creation
@@ -104,6 +121,10 @@ jobs:
         run: |
           npx playwright test --reporter=list --config=tests/e2e-pw/playwright.config.ts --shard=${{ matrix.shard-index }}/${{ matrix.shard-total }}
         working-directory: plugins/webkul/playwright
+
+      - name: Check MySQL Logs
+        if: always()
+        run: docker logs ${{ job.services.mysql.id }}
 
       - name: Upload Test Results
         uses: actions/upload-artifact@v4
