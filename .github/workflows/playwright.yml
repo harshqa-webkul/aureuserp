@@ -66,14 +66,6 @@ jobs:
             exit 1
           fi
 
-      - name: Debug MySQL Connection
-        run: |
-          echo "MySQL Host: 127.0.0.1"
-          echo "MySQL Port: ${{ job.services.mysql.ports['3306'] }}"
-          echo "MySQL Database: aureuserp"
-          echo "MySQL User: root"
-          echo "MySQL Password: root"
-
       - name: Setting Environment mysql
         run: |
           cp .env.example .env
@@ -87,11 +79,6 @@ jobs:
           sed -i "s|^\(APP_URL=\s*\).*$|\1http://127.0.0.1:8000|" .env
           cat .env
 
-      - name: Verify .env Configuration
-        run: |
-          grep DB_ .env
-          grep APP_ .env
-
       - name: Install Composer Dependencies
         run: composer install --no-interaction
 
@@ -99,7 +86,7 @@ jobs:
         run: php artisan migrate --force
 
       - name: Running Aureus Installer
-        run: php artisan erp:install
+        run: php artisan erp:install --skip-env-check --skip-admin-creation --no-interaction
 
       - name: Start Laravel server
         run: |
@@ -121,10 +108,6 @@ jobs:
         run: |
           npx playwright test --reporter=list --config=tests/e2e-pw/playwright.config.ts --shard=${{ matrix.shard-index }}/${{ matrix.shard-total }}
         working-directory: plugins/webkul/playwright
-
-      - name: Check MySQL Logs
-        if: always()
-        run: docker logs ${{ job.services.mysql.id }}
 
       - name: Upload Test Results
         uses: actions/upload-artifact@v4
