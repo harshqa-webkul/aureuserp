@@ -22,6 +22,7 @@ class InstallERP extends Command
      * @var string
      */
     protected $signature = 'erp:install 
+                             {--no-interaction : Run the command without prompting for input}
                              {--skip-env-check : Skip environment checks during installation}
                              {--skip-admin-creation : Skip admin user creation during installation}';
 
