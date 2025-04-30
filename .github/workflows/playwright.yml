@@ -10,7 +10,7 @@ env:
 
 jobs:
   aureus_playwright_test:
-    runs-on: ${{ matrix.os}}
+    runs-on: ${{ matrix.os }}
 
     strategy:
       fail-fast: false
@@ -50,19 +50,18 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install Node.js Dependencies
-        run: npm install
-        working-directory: plugins/webkul/playwright
-
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-        working-directory: plugins/webkul/playwright
+      - name: Wait for MySQL to be ready
+        run: |
+          while ! mysqladmin ping -h 127.0.0.1 -P ${{ job.services.mysql.ports['3306'] }} --silent; do
+            echo "Waiting for MySQL to be ready..."
+            sleep 1
+          done
 
       - name: Setting Environment mysql
         run: |
           cp .env.example .env
           sed -i "s|^\(DB_CONNECTION=\s*\).*$|\1mysql|" .env
-          sed -i "s|^\(DB_HOST=\s*\).*$|\1mysql|" .env
+          sed -i "s|^\(DB_HOST=\s*\).*$|\1127.0.0.1|" .env
           sed -i "s|^\(DB_PORT=\s*\).*$|\1${{ job.services.mysql.ports['3306'] }}|" .env
           sed -i "s|^\(DB_DATABASE=\s*\).*$|\1aureuserp|" .env
           sed -i "s|^\(DB_USERNAME=\s*\).*$|\1root|" .env
@@ -70,18 +69,6 @@ jobs:
           sed -i "s|^\(APP_DEBUG=\s*\).*$|\1false|" .env
           sed -i "s|^\(APP_URL=\s*\).*$|\1http://127.0.0.1:8000|" .env
           cat .env
-
-      - name: Wait for MySQL to be ready
-        run: |
-          echo "Waiting for MySQL to be ready..."
-          for i in {1..30}; do
-            if mysqladmin ping -h mysql -P 3306 -u root -proot --silent; then
-              echo "MySQL is up!"
-              break
-            fi
-            echo "Waiting ($i)..."
-            sleep 1
-          done
 
       - name: Install Composer Dependencies
         run: composer create-project
@@ -94,6 +81,14 @@ jobs:
           php artisan serve --host=0.0.0.0 --port=8000 > server.log 2>&1 &
           echo "Waiting for server to start..."
           timeout 30 bash -c 'until curl -s http://127.0.0.1:8000 > /dev/null; do sleep 1; done'
+
+      - name: Install Node.js Dependencies
+        run: npm install
+        working-directory: plugins/webkul/playwright
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+        working-directory: plugins/webkul/playwright
 
       - name: Run All Playwright Tests
         env:
