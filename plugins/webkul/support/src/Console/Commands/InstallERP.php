@@ -78,34 +78,45 @@ class InstallERP extends Command
      * Generate roles and permissions using Filament Shield.
      */
     protected function generateRolesAndPermissions(): void
-    {
-        $this->info('🛡 Generating roles and permissions...');
+{
+    $this->info('🛡 Generating roles and permissions...');
 
-        $adminRole = Role::firstOrCreate(['name' => $this->getAdminRoleName()]);
+    $adminRole = Role::firstOrCreate(['name' => $this->getAdminRoleName()]);
 
-        Artisan::call('shield:generate', ['--all' => true, '--option' => 'permissions'], $this->getOutput());
+    Artisan::call('shield:generate', ['--all' => true, '--option' => 'permissions'], $this->getOutput());
 
-        $permissions = Permission::all();
-        $adminRole->syncPermissions($permissions);
+    $permissions = Permission::all();
+    $adminRole->syncPermissions($permissions);
 
-        $this->info('✅ Roles and permissions generated and assigned successfully.');
-    }
+    $this->info('✅ Roles and permissions generated and assigned successfully.');
+}
 
-    /**
-     * Create the initial Admin user with the Super Admin role.
-     */
-    protected function createAdminUser(): void
-    {
-        $this->info('👤 Creating an Admin user...');
+/**
+ * Create the initial Admin user with the Super Admin role.
+ */
+protected function createAdminUser(): void
+{
+    $this->info('👤 Creating an Admin user...');
 
-        $defaultCompany = Company::first();
+    $defaultCompany = Company::first();
 
-        $userModel = app(config('filament-shield.auth_provider_model.fqcn'));
+    $userModel = app(config('filament-shield.auth_provider_model.fqcn'));
 
+    if ($this->option('no-interaction')) {
+        // Use default values in non-interactive mode
         $adminData = [
-            'name'  => text(
+            'name' => 'Admin',
+            'email' => 'admin@example.com',
+            'password' => Hash::make('password'), // Use a secure default password in production
+            'resource_permission' => 'global',
+            'default_company_id' => $defaultCompany->id,
+        ];
+    } else {
+        // Interactive mode
+        $adminData = [
+            'name' => text(
                 'Name',
-                default: 'Example',
+                default: 'Admin',
                 required: true
             ),
             'email' => text(
@@ -122,21 +133,23 @@ class InstallERP extends Command
                 )
             ),
             'resource_permission' => 'global',
-            'default_company_id'  => $defaultCompany->id,
+            'default_company_id' => $defaultCompany->id,
         ];
-
-        $adminUser = $userModel::updateOrCreate(['email' => $adminData['email']], $adminData);
-
-        $defaultCompany->update(['creator_id' => $adminUser->id]);
-
-        $adminRoleName = $this->getAdminRoleName();
-
-        if (! $adminUser->hasRole($adminRoleName)) {
-            $adminUser->assignRole($adminRoleName);
-        }
-
-        $this->info("✅ Admin user '{$adminUser->name}' created and assigned the '{$this->getAdminRoleName()}' role successfully.");
     }
+
+    $adminUser = $userModel::updateOrCreate(['email' => $adminData['email']], $adminData);
+
+    $defaultCompany->update(['creator_id' => $adminUser->id]);
+
+    $adminRoleName = $this->getAdminRoleName();
+
+    if (! $adminUser->hasRole($adminRoleName)) {
+        $adminUser->assignRole($adminRoleName);
+    }
+
+    $this->info("✅ Admin user '{$adminUser->name}' created and assigned the '{$this->getAdminRoleName()}' role successfully.");
+}
+
 
     /**
      * Retrieve the Super Admin role name from the configuration.
