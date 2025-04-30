@@ -21,10 +21,7 @@ class InstallERP extends Command
      *
      * @var string
      */
-    protected $signature = 'erp:install 
-                             {--no-interaction : Run the command without prompting for input}
-                             {--skip-env-check : Skip environment checks during installation}
-                             {--skip-admin-creation : Skip admin user creation during installation}';
+    protected $signature = 'erp:install';
 
     /**
      * The console command description.
@@ -38,10 +35,6 @@ class InstallERP extends Command
      */
     public function handle()
     {
-        if (! $this->option('skip-env-check')) {
-            $this->checkEnvironment();
-        }
-
         $this->info('🚀 Starting ERP System Installation...');
 
         $this->runMigrations();
@@ -52,9 +45,7 @@ class InstallERP extends Command
 
         $this->runSeeder();
 
-        if (! $this->option('skip-admin-creation')) {
-            $this->createAdminUser();
-        }
+        $this->createAdminUser();
 
         $this->info('🎉 ERP System installation completed successfully!');
     }
@@ -90,13 +81,7 @@ class InstallERP extends Command
 {
     $this->info('🛡 Generating roles and permissions...');
 
-    if ($this->option('no-interaction')) {
-        $roleName = 'Admin'; // Default value for non-interactive mode
-    } else {
-        $roleName = $this->getAdminRoleName();
-    }
-
-    $adminRole = Role::firstOrCreate(['name' => $roleName]);
+    $adminRole = Role::firstOrCreate(['name' => $this->getAdminRoleName()]);
 
     Artisan::call('shield:generate', ['--all' => true, '--option' => 'permissions'], $this->getOutput());
 

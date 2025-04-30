@@ -25,7 +25,7 @@ jobs:
 
     services:
       mysql:
-        image: mysql:5.7
+        image: mysql:8.0
         env:
           MYSQL_ROOT_PASSWORD: root
           MYSQL_DATABASE: aureuserp
@@ -50,21 +50,15 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Wait for MySQL to be ready
+      - name: Install Node.js Dependencies
+        run: npm install
+        working-directory: tests/e2e-pw
+
+      - name: Install Playwright Browsers
         run: |
-          for i in {1..30}; do
-            if mysqladmin ping -h 127.0.0.1 -P ${{ job.services.mysql.ports['3306'] }} --silent; then
-              echo "MySQL is ready!"
-              break
-            else
-              echo "Waiting for MySQL ($i/30)..."
-              sleep 5
-            fi
-          done
-          if ! mysqladmin ping -h 127.0.0.1 -P ${{ job.services.mysql.ports['3306'] }} --silent; then
-            echo "MySQL failed to start!"
-            exit 1
-          fi
+          sudo apt-get update --allow-releaseinfo-change
+          npx playwright install --with-deps chromium
+        working-directory: tests/e2e-pw
 
       - name: Setting Environment mysql
         run: |
@@ -82,11 +76,8 @@ jobs:
       - name: Install Composer Dependencies
         run: composer create-project
 
-      - name: Run Database Migrations
-        run: php artisan migrate --force
-
       - name: Running Aureus Installer
-        run: php artisan erp:install --skip-env-check --skip-admin-creation
+        run: php artisan erp:install
 
       - name: Start Laravel server
         run: |
@@ -94,20 +85,12 @@ jobs:
           echo "Waiting for server to start..."
           timeout 30 bash -c 'until curl -s http://127.0.0.1:8000 > /dev/null; do sleep 1; done'
 
-      - name: Install Node.js Dependencies
-        run: npm install
-        working-directory: plugins/webkul/playwright
-
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-        working-directory: plugins/webkul/playwright
-
       - name: Run All Playwright Tests
         env:
           BASE_URL: "http://127.0.0.1:8000"
         run: |
           npx playwright test --reporter=list --config=tests/e2e-pw/playwright.config.ts --shard=${{ matrix.shard-index }}/${{ matrix.shard-total }}
-        working-directory: plugins/webkul/playwright
+        working-directory: tests/e2e-pw
 
       - name: Upload Test Results
         uses: actions/upload-artifact@v4
