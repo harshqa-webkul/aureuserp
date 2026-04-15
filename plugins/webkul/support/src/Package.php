@@ -166,6 +166,10 @@ class Package extends BasePackage
     public static function getPackagePlugin(string $name): ?Plugin
     {
         if (count(static::$plugins) == 0) {
+            if (! Schema::hasTable('plugins')) {
+                return null;
+            }
+
             static::$plugins = Plugin::all()->keyBy('name');
         }
 
@@ -179,6 +183,10 @@ class Package extends BasePackage
     public static function isPluginInstalled(string $name): bool
     {
         if (count(static::$plugins) == 0) {
+            if (! Schema::hasTable('plugins')) {
+                return false;
+            }
+
             static::$plugins = Plugin::all()->keyBy('name');
         }
 
