@@ -1,0 +1,343 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - navigation [ref=e3]:
+    - button [ref=e6] [cursor=pointer]:
+      - img [ref=e7]
+    - link "YourERP logo" [ref=e18] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - img "YourERP logo" [ref=e19]
+    - list [ref=e20]:
+      - listitem [ref=e21]:
+        - link "Inventory" [ref=e23] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/operations
+      - listitem [ref=e24]:
+        - link "Operations" [ref=e25] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/operations
+          - generic [ref=e26]: Operations
+      - listitem [ref=e27]:
+        - link "Products" [ref=e28] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/products
+          - generic [ref=e29]: Products
+      - listitem [ref=e30]:
+        - link "Reporting" [ref=e31] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/reporting
+          - generic [ref=e32]: Reporting
+      - listitem [ref=e33]:
+        - link "Configurations" [ref=e34] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/configurations
+          - generic [ref=e35]: Configurations
+      - listitem [ref=e36]:
+        - link "Settings" [ref=e37] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/settings
+          - generic [ref=e38]: Settings
+    - generic [ref=e39]:
+      - generic [ref=e42]:
+        - generic [ref=e43]: Global search
+        - generic [ref=e44]:
+          - img [ref=e46]
+          - searchbox "Global search" [ref=e49]
+      - button "Notifications" [ref=e53] [cursor=pointer]:
+        - img [ref=e54]
+      - button "User menu" [ref=e58] [cursor=pointer]:
+        - img "Avatar of Example" [ref=e59]
+  - generic [ref=e60]:
+    - complementary [ref=e61]:
+      - navigation [ref=e62]:
+        - list [ref=e63]:
+          - list [ref=e64]:
+            - listitem [ref=e65]:
+              - link "Operations" [ref=e66] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/operations
+                - generic [ref=e67]: Operations
+            - listitem [ref=e68]:
+              - link "Products" [ref=e69] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products
+                - generic [ref=e70]: Products
+            - listitem [ref=e71]:
+              - link "Reporting" [ref=e72] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/reporting
+                - generic [ref=e73]: Reporting
+            - listitem [ref=e74]:
+              - link "Configurations" [ref=e75] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/configurations
+                - generic [ref=e76]: Configurations
+            - listitem [ref=e77]:
+              - link "Settings" [ref=e78] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/settings
+                - generic [ref=e79]: Settings
+    - main [ref=e81]:
+      - generic [ref=e83]:
+        - generic [ref=e84]:
+          - generic [ref=e85]:
+            - navigation [ref=e86]:
+              - list [ref=e87]:
+                - listitem [ref=e88]:
+                  - link "Products" [ref=e89] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/products/products
+                - listitem [ref=e90]:
+                  - img [ref=e91]
+                  - link "E2E Track Adjust 1782894954026" [ref=e93] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/products/products/22
+                - listitem [ref=e94]:
+                  - img [ref=e95]
+                  - generic [ref=e97]: Edit
+            - heading "Edit E2E Track Adjust 1782894954026" [level=1] [ref=e98]
+          - generic [ref=e100]:
+            - link "Update Quantity" [ref=e101] [cursor=pointer]:
+              - /url: http://127.0.0.1:8000/admin/inventory/products/products/22/quantities
+            - button "Chatter" [ref=e102] [cursor=pointer]:
+              - img [ref=e103]
+              - generic [ref=e107]: "1"
+            - button "Print Labels" [ref=e108] [cursor=pointer]:
+              - img [ref=e109]
+              - text: Print Labels
+            - button "Delete" [ref=e111] [cursor=pointer]
+        - generic [ref=e112]:
+          - list [ref=e114]:
+            - listitem [ref=e115]:
+              - list [ref=e116]:
+                - listitem [ref=e117]:
+                  - link "Products" [ref=e118] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/products/products
+                    - img [ref=e119]
+                    - generic [ref=e121]: Products
+                - listitem [ref=e122]:
+                  - link "Packages" [ref=e123] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/products/packages
+                    - img [ref=e124]
+                    - generic [ref=e126]: Packages
+                - listitem [ref=e127]:
+                  - link "Lots / Serial Numbers" [ref=e128] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/products/lots
+                    - img [ref=e129]
+                    - generic [ref=e131]: Lots / Serial Numbers
+          - generic [ref=e132]:
+            - navigation [ref=e139]:
+              - link "View" [ref=e140] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products/products/22
+                - img [ref=e141]
+                - generic [ref=e144]: View
+              - link "Edit" [ref=e145] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products/products/22/edit
+                - img [ref=e146]
+                - generic [ref=e148]: Edit
+              - link "Attributes" [ref=e149] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products/products/22/attributes
+                - img [ref=e150]
+                - generic [ref=e152]: Attributes
+              - link "Variants" [ref=e153] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products/products/22/variants
+                - img [ref=e154]
+                - generic [ref=e156]: Variants
+              - link "Quantities" [ref=e157] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products/products/22/quantities
+                - img [ref=e158]
+                - generic [ref=e160]: Quantities
+              - link "IN/OUT" [ref=e161] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products/products/22/moves
+                - img [ref=e162]
+                - generic [ref=e164]: IN/OUT
+            - generic [ref=e168]:
+              - generic [ref=e172]:
+                - generic [ref=e176]:
+                  - generic [ref=e182]:
+                    - generic [ref=e185]:
+                      - generic [ref=e189]:
+                        - text: Name
+                        - superscript [ref=e190]: "*"
+                      - textbox "Name*" [active] [ref=e194]:
+                        - /placeholder: eg. T-shirt
+                        - text: E2E Track Adjust 1782894954026
+                    - generic [ref=e197]:
+                      - generic [ref=e201]: Description
+                      - generic [ref=e205]:
+                        - generic [ref=e206]:
+                          - generic [ref=e207]:
+                            - button "Bold" [ref=e208] [cursor=pointer]:
+                              - img [ref=e209]
+                            - button "Italic" [ref=e211] [cursor=pointer]:
+                              - img [ref=e212]
+                            - button "Underline" [ref=e214] [cursor=pointer]:
+                              - img [ref=e215]
+                            - button "Strikethrough" [ref=e217] [cursor=pointer]:
+                              - img [ref=e218]
+                            - button "Subscript" [ref=e220] [cursor=pointer]:
+                              - img [ref=e221]
+                            - button "Superscript" [ref=e225] [cursor=pointer]:
+                              - img [ref=e226]
+                            - button "Link" [ref=e230] [cursor=pointer]:
+                              - img [ref=e231]
+                          - generic [ref=e234]:
+                            - button "Heading 2" [ref=e235] [cursor=pointer]:
+                              - img [ref=e236]
+                            - button "Heading 3" [ref=e239] [cursor=pointer]:
+                              - img [ref=e240]
+                          - generic [ref=e244]:
+                            - button "Align start" [ref=e245] [cursor=pointer]:
+                              - img [ref=e246]
+                            - button "Align center" [ref=e247] [cursor=pointer]:
+                              - img [ref=e248]
+                            - button "Align end" [ref=e249] [cursor=pointer]:
+                              - img [ref=e250]
+                          - generic [ref=e251]:
+                            - button "Blockquote" [ref=e252] [cursor=pointer]:
+                              - img [ref=e253]
+                            - button "Code block" [ref=e255] [cursor=pointer]:
+                              - img [ref=e256]
+                            - button "Bullet list" [ref=e260] [cursor=pointer]:
+                              - img [ref=e261]
+                            - button "Numbered list" [ref=e263] [cursor=pointer]:
+                              - img [ref=e264]
+                          - generic [ref=e266]:
+                            - button "Table" [ref=e267] [cursor=pointer]:
+                              - img [ref=e268]
+                            - button "Attach files" [ref=e270] [cursor=pointer]:
+                              - img [ref=e271]
+                          - generic [ref=e273]:
+                            - button "Undo" [ref=e274] [cursor=pointer]:
+                              - img [ref=e275]
+                            - button "Redo" [ref=e277] [cursor=pointer]:
+                              - img [ref=e278]
+                        - textbox "Description" [ref=e282]:
+                          - paragraph [ref=e283]
+                    - generic [ref=e286]:
+                      - generic [ref=e290]: Tags
+                      - generic [ref=e292]:
+                        - button "Select an option" [ref=e297] [cursor=pointer]:
+                          - generic [ref=e299]: Select an option
+                        - button "Create" [ref=e302] [cursor=pointer]:
+                          - img [ref=e303]
+                  - generic [ref=e308]:
+                    - heading "Images" [level=2] [ref=e311]
+                    - generic [ref=e316]:
+                      - generic [ref=e320]: Images
+                      - group "Images" [ref=e322]:
+                        - generic [ref=e324]:
+                          - button "Drag & Drop your files or Browse"
+                          - generic [ref=e326]: Drag & Drop your files or Browse
+                          - list [ref=e328]
+                          - alert [ref=e329]
+                  - generic [ref=e333]:
+                    - heading "Inventory" [level=2] [ref=e336]
+                    - generic [ref=e338]:
+                      - group "Tracking" [ref=e341]:
+                        - generic [ref=e342]: Tracking
+                        - generic [ref=e343]:
+                          - generic [ref=e349]:
+                            - switch "Track Inventory" [checked] [ref=e350] [cursor=pointer]
+                            - generic [ref=e351]: Track Inventory
+                          - generic [ref=e354]:
+                            - generic [ref=e358]: Track By
+                            - combobox "Track By" [ref=e362]:
+                              - option "By Unique Serial Number"
+                              - option "By Lots"
+                              - option "By Quantity" [selected]
+                      - group "Operations" [ref=e365]:
+                        - generic [ref=e366]: Operations
+                        - generic [ref=e370]:
+                          - generic [ref=e372]:
+                            - generic [ref=e374]: Routes
+                            - img [ref=e378]
+                          - generic [ref=e384]:
+                            - 'checkbox "WH Pkg3 1782894689280: Cross-Dock" [ref=e385]'
+                            - generic [ref=e387]: "WH Pkg3 1782894689280: Cross-Dock"
+                      - group "Logistics" [ref=e390]:
+                        - generic [ref=e391]: Logistics
+                        - generic [ref=e392]:
+                          - generic [ref=e395]:
+                            - generic [ref=e397]:
+                              - generic [ref=e399]: Responsible
+                              - img [ref=e403]
+                            - button "Select an option" [ref=e411] [cursor=pointer]:
+                              - generic [ref=e413]: Select an option
+                          - generic [ref=e416]:
+                            - generic [ref=e420]: Weight
+                            - spinbutton "Weight" [ref=e424]
+                          - generic [ref=e427]:
+                            - generic [ref=e431]: Volume
+                            - spinbutton "Volume" [ref=e435]
+                          - generic [ref=e438]:
+                            - generic [ref=e440]:
+                              - generic [ref=e442]: Customer Lead Time (Days)
+                              - img [ref=e446]
+                            - spinbutton "Customer Lead Time (Days)" [ref=e451]
+                - generic [ref=e455]:
+                  - generic [ref=e459]:
+                    - heading "Settings" [level=2] [ref=e462]
+                    - generic [ref=e464]:
+                      - generic [ref=e467]:
+                        - generic [ref=e471]: Type
+                        - generic [ref=e473]:
+                          - generic [ref=e474]:
+                            - radio "Goods" [checked] [ref=e475]
+                            - paragraph [ref=e477]: Goods
+                          - generic [ref=e478]:
+                            - radio "Service" [ref=e479]
+                            - paragraph [ref=e481]: Service
+                      - generic [ref=e484]:
+                        - generic [ref=e488]: Reference
+                        - textbox "Reference" [ref=e492]
+                      - generic [ref=e495]:
+                        - generic [ref=e499]: Barcode
+                        - textbox "Barcode" [ref=e503]
+                      - generic [ref=e506]:
+                        - generic [ref=e510]:
+                          - text: Category
+                          - superscript [ref=e511]: "*"
+                        - generic [ref=e513]:
+                          - generic [ref=e517]:
+                            - button "All" [ref=e518] [cursor=pointer]:
+                              - generic [ref=e520]: All
+                            - button "Clear selection" [ref=e521] [cursor=pointer]:
+                              - img [ref=e522]
+                          - button "Create" [ref=e526] [cursor=pointer]:
+                            - img [ref=e527]
+                      - generic [ref=e531]:
+                        - generic [ref=e535]: Company
+                        - generic [ref=e541]:
+                          - button "DummyCorp LLC" [ref=e542] [cursor=pointer]:
+                            - generic [ref=e544]: DummyCorp LLC
+                          - button "Clear selection" [ref=e545] [cursor=pointer]:
+                            - img [ref=e546]
+                  - generic [ref=e551]:
+                    - heading "Pricing" [level=2] [ref=e554]
+                    - generic [ref=e556]:
+                      - generic [ref=e559]:
+                        - generic [ref=e563]:
+                          - text: Price
+                          - superscript [ref=e564]: "*"
+                        - generic [ref=e567]:
+                          - generic [ref=e570]:
+                            - generic [ref=e571]: Price
+                            - spinbutton "Price" [ref=e574]: "10"
+                          - generic [ref=e577]:
+                            - generic [ref=e578]: Uom id
+                            - generic [ref=e583]:
+                              - button "Units" [ref=e584] [cursor=pointer]:
+                                - generic [ref=e586]: Units
+                              - button "Clear selection" [ref=e587] [cursor=pointer]:
+                                - img [ref=e588]
+                      - generic [ref=e592]:
+                        - generic [ref=e596]:
+                          - text: Cost
+                          - superscript [ref=e597]: "*"
+                        - generic [ref=e600]:
+                          - generic [ref=e603]:
+                            - generic [ref=e604]: Cost
+                            - spinbutton "Cost" [ref=e607]: "0"
+                          - generic [ref=e610]:
+                            - generic [ref=e611]: Uom po id
+                            - generic [ref=e616]:
+                              - button "Units" [ref=e617] [cursor=pointer]:
+                                - generic [ref=e619]: Units
+                              - button "Clear selection" [ref=e620] [cursor=pointer]:
+                                - img [ref=e621]
+              - generic [ref=e627]:
+                - button "Save changes" [ref=e628] [cursor=pointer]:
+                  - generic [ref=e629]: Save changes
+                - button "Cancel" [ref=e630] [cursor=pointer]
+  - generic:
+    - status
+```

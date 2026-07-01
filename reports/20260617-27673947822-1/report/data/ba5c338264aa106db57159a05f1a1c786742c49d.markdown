@@ -1,0 +1,301 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e3]:
+    - button [ref=e6] [cursor=pointer]:
+      - img [ref=e7]
+    - link "YourERP logo" [ref=e18] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - img "YourERP logo" [ref=e19]
+    - list [ref=e20]:
+      - listitem [ref=e21]:
+        - link "Plugins" [ref=e23] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/plugins
+      - listitem [ref=e24]:
+        - link "Plugin" [ref=e25] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/plugins
+          - generic [ref=e26]: Plugin
+    - generic [ref=e27]:
+      - generic [ref=e30]:
+        - generic [ref=e31]: Global search
+        - generic [ref=e32]:
+          - img [ref=e34]
+          - searchbox "Global search" [ref=e37]
+      - button "Notifications" [ref=e41] [cursor=pointer]:
+        - img [ref=e42]
+      - button "User menu" [ref=e46] [cursor=pointer]:
+        - img "Avatar of Example" [ref=e47]
+  - generic [ref=e48]:
+    - complementary [ref=e49]:
+      - navigation [ref=e50]:
+        - list [ref=e51]:
+          - list [ref=e52]:
+            - listitem [ref=e53]:
+              - link "Plugin" [ref=e54] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/plugins
+                - generic [ref=e55]: Plugin
+    - main [ref=e57]:
+      - generic [ref=e59]:
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - navigation [ref=e62]:
+              - list [ref=e63]:
+                - listitem [ref=e64]:
+                  - link "Plugin" [ref=e65] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/plugins
+                - listitem [ref=e66]:
+                  - img [ref=e67]
+                  - generic [ref=e69]: List
+            - heading "Plugins" [level=1] [ref=e70]
+          - button "Sync Available Plugins" [ref=e73] [cursor=pointer]:
+            - img [ref=e74]
+            - text: Sync Available Plugins
+        - generic [ref=e78]:
+          - tablist [ref=e82]:
+            - tab "Apps 15" [ref=e83] [cursor=pointer]:
+              - generic [ref=e84]: Apps
+              - generic [ref=e87]: "15"
+            - tab "Extra 3" [ref=e88] [cursor=pointer]:
+              - generic [ref=e89]: Extra
+              - generic [ref=e92]: "3"
+            - tab "Installed 15" [ref=e93] [cursor=pointer]:
+              - generic [ref=e94]: Installed
+              - generic [ref=e97]: "15"
+            - tab "Not Installed 3" [ref=e98] [cursor=pointer]:
+              - generic [ref=e99]: Not Installed
+              - generic [ref=e102]: "3"
+          - generic [ref=e107]:
+            - generic [ref=e111]:
+              - generic [ref=e112]: Search
+              - generic [ref=e113]:
+                - img [ref=e115]
+                - searchbox "Search" [ref=e118]
+            - generic [ref=e120]:
+              - generic [ref=e122]:
+                - button "Accounting 1.0.0 Not Installed 1 Dependencies" [ref=e124] [cursor=pointer]:
+                  - generic [ref=e126]:
+                    - img [ref=e129]
+                    - generic [ref=e131]:
+                      - generic [ref=e133]:
+                        - generic [ref=e135]: Accounting
+                        - generic [ref=e138]: 1.0.0
+                      - generic [ref=e140]:
+                        - generic [ref=e143]: Not Installed
+                        - generic [ref=e146]: 1 Dependencies
+                - button "Actions" [ref=e150] [cursor=pointer]:
+                  - img [ref=e151]
+              - generic [ref=e154]:
+                - button "Blogs 1.0.0 Manage blogs Installed 1 Dependencies" [ref=e156] [cursor=pointer]:
+                  - generic [ref=e158]:
+                    - img [ref=e161]
+                    - generic [ref=e163]:
+                      - generic [ref=e165]:
+                        - generic [ref=e167]: Blogs
+                        - generic [ref=e170]: 1.0.0
+                      - generic [ref=e172]: Manage blogs
+                      - generic [ref=e174]:
+                        - generic [ref=e177]: Installed
+                        - generic [ref=e180]: 1 Dependencies
+                - button "Actions" [ref=e184] [cursor=pointer]:
+                  - img [ref=e185]
+              - generic [ref=e188]:
+                - button "Contacts 1.0.0 Contact management for customers and vendors Installed 0 Dependencies" [ref=e190] [cursor=pointer]:
+                  - generic [ref=e192]:
+                    - img [ref=e195]
+                    - generic [ref=e197]:
+                      - generic [ref=e199]:
+                        - generic [ref=e201]: Contacts
+                        - generic [ref=e204]: 1.0.0
+                      - generic [ref=e206]: Contact management for customers and vendors
+                      - generic [ref=e208]:
+                        - generic [ref=e211]: Installed
+                        - generic [ref=e214]: 0 Dependencies
+                - button "Actions" [ref=e218] [cursor=pointer]:
+                  - img [ref=e219]
+              - generic [ref=e222]:
+                - button "Employees 1.0.0 Employees management Installed 0 Dependencies" [ref=e224] [cursor=pointer]:
+                  - generic [ref=e226]:
+                    - img [ref=e229]
+                    - generic [ref=e231]:
+                      - generic [ref=e233]:
+                        - generic [ref=e235]: Employees
+                        - generic [ref=e238]: 1.0.0
+                      - generic [ref=e240]: Employees management
+                      - generic [ref=e242]:
+                        - generic [ref=e245]: Installed
+                        - generic [ref=e248]: 0 Dependencies
+                - button "Actions" [ref=e252] [cursor=pointer]:
+                  - img [ref=e253]
+              - generic [ref=e256]:
+                - button "Inventories 1.0.0 Inventory and warehouse management Installed 1 Dependencies" [ref=e258] [cursor=pointer]:
+                  - generic [ref=e260]:
+                    - img [ref=e263]
+                    - generic [ref=e265]:
+                      - generic [ref=e267]:
+                        - generic [ref=e269]: Inventories
+                        - generic [ref=e272]: 1.0.0
+                      - generic [ref=e274]: Inventory and warehouse management
+                      - generic [ref=e276]:
+                        - generic [ref=e279]: Installed
+                        - generic [ref=e282]: 1 Dependencies
+                - button "Actions" [ref=e286] [cursor=pointer]:
+                  - img [ref=e287]
+              - generic [ref=e290]:
+                - button "Invoices 1.0.0 Invoice generation and management Not Installed 1 Dependencies" [ref=e292] [cursor=pointer]:
+                  - generic [ref=e294]:
+                    - img [ref=e297]
+                    - generic [ref=e299]:
+                      - generic [ref=e301]:
+                        - generic [ref=e303]: Invoices
+                        - generic [ref=e306]: 1.0.0
+                      - generic [ref=e308]: Invoice generation and management
+                      - generic [ref=e310]:
+                        - generic [ref=e313]: Not Installed
+                        - generic [ref=e316]: 1 Dependencies
+                - button "Actions" [ref=e320] [cursor=pointer]:
+                  - img [ref=e321]
+              - generic [ref=e324]:
+                - button "Maintenance 1.0.0 Maintenance management Installed 0 Dependencies" [ref=e326] [cursor=pointer]:
+                  - generic [ref=e328]:
+                    - img [ref=e331]
+                    - generic [ref=e333]:
+                      - generic [ref=e335]:
+                        - generic [ref=e337]: Maintenance
+                        - generic [ref=e340]: 1.0.0
+                      - generic [ref=e342]: Maintenance management
+                      - generic [ref=e344]:
+                        - generic [ref=e347]: Installed
+                        - generic [ref=e350]: 0 Dependencies
+                - button "Actions" [ref=e354] [cursor=pointer]:
+                  - img [ref=e355]
+              - generic [ref=e358]:
+                - button "Manufacturing 1.0.0 Manufacturing and production management Installed 2 Dependencies" [ref=e360] [cursor=pointer]:
+                  - generic [ref=e362]:
+                    - img [ref=e365]
+                    - generic [ref=e367]:
+                      - generic [ref=e369]:
+                        - generic [ref=e371]: Manufacturing
+                        - generic [ref=e374]: 1.0.0
+                      - generic [ref=e376]: Manufacturing and production management
+                      - generic [ref=e378]:
+                        - generic [ref=e381]: Installed
+                        - generic [ref=e384]: 2 Dependencies
+                - button "Actions" [ref=e388] [cursor=pointer]:
+                  - img [ref=e389]
+              - generic [ref=e392]:
+                - button "Projects 1.0.0 Project planning and management Installed 0 Dependencies" [ref=e394] [cursor=pointer]:
+                  - generic [ref=e396]:
+                    - img [ref=e399]
+                    - generic [ref=e401]:
+                      - generic [ref=e403]:
+                        - generic [ref=e405]: Projects
+                        - generic [ref=e408]: 1.0.0
+                      - generic [ref=e410]: Project planning and management
+                      - generic [ref=e412]:
+                        - generic [ref=e415]: Installed
+                        - generic [ref=e418]: 0 Dependencies
+                - button "Actions" [ref=e422] [cursor=pointer]:
+                  - img [ref=e423]
+              - generic [ref=e426]:
+                - button "Purchases 1.0.0 Procurement and purchase order management Installed 1 Dependencies" [ref=e428] [cursor=pointer]:
+                  - generic [ref=e430]:
+                    - img [ref=e433]
+                    - generic [ref=e435]:
+                      - generic [ref=e437]:
+                        - generic [ref=e439]: Purchases
+                        - generic [ref=e442]: 1.0.0
+                      - generic [ref=e444]: Procurement and purchase order management
+                      - generic [ref=e446]:
+                        - generic [ref=e449]: Installed
+                        - generic [ref=e452]: 1 Dependencies
+                - button "Actions" [ref=e456] [cursor=pointer]:
+                  - img [ref=e457]
+              - generic [ref=e460]:
+                - button "Recruitments 1.0.0 Applicant tracking and hiring Installed 1 Dependencies" [ref=e462] [cursor=pointer]:
+                  - generic [ref=e464]:
+                    - img [ref=e467]
+                    - generic [ref=e469]:
+                      - generic [ref=e471]:
+                        - generic [ref=e473]: Recruitments
+                        - generic [ref=e476]: 1.0.0
+                      - generic [ref=e478]: Applicant tracking and hiring
+                      - generic [ref=e480]:
+                        - generic [ref=e483]: Installed
+                        - generic [ref=e486]: 1 Dependencies
+                - button "Actions" [ref=e490] [cursor=pointer]:
+                  - img [ref=e491]
+              - generic [ref=e494]:
+                - button "Sales 1.0.0 Sales pipeline and opportunity management Installed 2 Dependencies" [ref=e496] [cursor=pointer]:
+                  - generic [ref=e498]:
+                    - img [ref=e501]
+                    - generic [ref=e503]:
+                      - generic [ref=e505]:
+                        - generic [ref=e507]: Sales
+                        - generic [ref=e510]: 1.0.0
+                      - generic [ref=e512]: Sales pipeline and opportunity management
+                      - generic [ref=e514]:
+                        - generic [ref=e517]: Installed
+                        - generic [ref=e520]: 2 Dependencies
+                - button "Actions" [ref=e524] [cursor=pointer]:
+                  - img [ref=e525]
+              - generic [ref=e528]:
+                - button "Time-off 1.0.0 Leave management and tracking Installed 1 Dependencies" [ref=e530] [cursor=pointer]:
+                  - generic [ref=e532]:
+                    - img [ref=e535]
+                    - generic [ref=e537]:
+                      - generic [ref=e539]:
+                        - generic [ref=e541]: Time-off
+                        - generic [ref=e544]: 1.0.0
+                      - generic [ref=e546]: Leave management and tracking
+                      - generic [ref=e548]:
+                        - generic [ref=e551]: Installed
+                        - generic [ref=e554]: 1 Dependencies
+                - button "Actions" [ref=e558] [cursor=pointer]:
+                  - img [ref=e559]
+              - generic [ref=e562]:
+                - button "Timesheets 1.0.0 Employee work hour tracking Installed 1 Dependencies" [ref=e564] [cursor=pointer]:
+                  - generic [ref=e566]:
+                    - img [ref=e569]
+                    - generic [ref=e571]:
+                      - generic [ref=e573]:
+                        - generic [ref=e575]: Timesheets
+                        - generic [ref=e578]: 1.0.0
+                      - generic [ref=e580]: Employee work hour tracking
+                      - generic [ref=e582]:
+                        - generic [ref=e585]: Installed
+                        - generic [ref=e588]: 1 Dependencies
+                - button "Actions" [ref=e592] [cursor=pointer]:
+                  - img [ref=e593]
+              - generic [ref=e596]:
+                - button "Website 1.0.0 Website for customer Installed 0 Dependencies" [ref=e598] [cursor=pointer]:
+                  - generic [ref=e600]:
+                    - img [ref=e603]
+                    - generic [ref=e605]:
+                      - generic [ref=e607]:
+                        - generic [ref=e609]: Website
+                        - generic [ref=e612]: 1.0.0
+                      - generic [ref=e614]: Website for customer
+                      - generic [ref=e616]:
+                        - generic [ref=e619]: Installed
+                        - generic [ref=e622]: 0 Dependencies
+                - button "Actions" [ref=e626] [cursor=pointer]:
+                  - img [ref=e627]
+            - navigation "Pagination navigation" [ref=e629]:
+              - generic [ref=e630]: Showing 1 to 15 of 15 results
+              - generic [ref=e633]:
+                - generic [ref=e635]: Per page
+                - combobox "Per page" [ref=e637]:
+                  - option "16"
+                  - option "24"
+                  - option "32" [selected]
+  - generic:
+    - status:
+      - generic [ref=e638]:
+        - img [ref=e639]
+        - generic [ref=e642]:
+          - heading "Uninstallation Failed" [level=3] [ref=e643]
+          - generic [ref=e644]: "Failed to uninstall 'accounts': SQLSTATE[HY000]: General error: 3730 Cannot drop table 'accounts_account_move_lines' referenced by a foreign key constraint 'sales_order_line_invoices_invoice_line_id_foreign' on table 'sales_order_line_invoices'. (Connection: mysql, Host: 127.0.0.1, Port: 32768, Database: aureuserp, SQL: drop table if exists `accounts_account_move_lines`)"
+        - button [ref=e645] [cursor=pointer]:
+          - img [ref=e646]
+```

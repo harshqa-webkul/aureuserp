@@ -1,0 +1,205 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e3]:
+    - button [ref=e6] [cursor=pointer]:
+      - img [ref=e7]
+    - link "YourERP logo" [ref=e18] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - img "YourERP logo" [ref=e19]
+    - list [ref=e20]:
+      - listitem [ref=e21]:
+        - link "Inventory" [ref=e23] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/operations
+      - listitem [ref=e24]:
+        - link "Operations" [ref=e25] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/operations
+          - generic [ref=e26]: Operations
+      - listitem [ref=e27]:
+        - link "Products" [ref=e28] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/products
+          - generic [ref=e29]: Products
+      - listitem [ref=e30]:
+        - link "Reporting" [ref=e31] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/reporting
+          - generic [ref=e32]: Reporting
+      - listitem [ref=e33]:
+        - link "Configurations" [ref=e34] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/configurations
+          - generic [ref=e35]: Configurations
+      - listitem [ref=e36]:
+        - link "Settings" [ref=e37] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/settings
+          - generic [ref=e38]: Settings
+    - generic [ref=e39]:
+      - generic [ref=e42]:
+        - generic [ref=e43]: Global search
+        - generic [ref=e44]:
+          - img [ref=e46]
+          - searchbox "Global search" [ref=e49]
+      - button "Notifications" [ref=e53] [cursor=pointer]:
+        - img [ref=e54]
+      - button "User menu" [ref=e58] [cursor=pointer]:
+        - img "Avatar of Example" [ref=e59]
+  - generic [ref=e60]:
+    - complementary [ref=e61]:
+      - navigation [ref=e62]:
+        - list [ref=e63]:
+          - list [ref=e64]:
+            - listitem [ref=e65]:
+              - link "Operations" [ref=e66] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/operations
+                - generic [ref=e67]: Operations
+            - listitem [ref=e68]:
+              - link "Products" [ref=e69] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products
+                - generic [ref=e70]: Products
+            - listitem [ref=e71]:
+              - link "Reporting" [ref=e72] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/reporting
+                - generic [ref=e73]: Reporting
+            - listitem [ref=e74]:
+              - link "Configurations" [ref=e75] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/configurations
+                - generic [ref=e76]: Configurations
+            - listitem [ref=e77]:
+              - link "Settings" [ref=e78] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/settings
+                - generic [ref=e79]: Settings
+    - main [ref=e81]:
+      - generic [ref=e83]:
+        - generic [ref=e85]:
+          - navigation [ref=e86]:
+            - list [ref=e87]:
+              - listitem [ref=e88]:
+                - link "Products" [ref=e89] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/inventory/products/products
+              - listitem [ref=e90]:
+                - img [ref=e91]
+                - link "E2E 2Step Receipt 1782741032957" [ref=e93] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/inventory/products/products/9
+              - listitem [ref=e94]:
+                - img [ref=e95]
+                - generic [ref=e97]: Quantities
+          - heading "Manage E2E 2Step Receipt 1782741032957 Quantities" [level=1] [ref=e98]
+        - generic [ref=e99]:
+          - list [ref=e101]:
+            - listitem [ref=e102]:
+              - list [ref=e103]:
+                - listitem [ref=e104]:
+                  - link "Products" [ref=e105] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/products/products
+                    - img [ref=e106]
+                    - generic [ref=e108]: Products
+                - listitem [ref=e109]:
+                  - link "Lots / Serial Numbers" [ref=e110] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/products/lots
+                    - img [ref=e111]
+                    - generic [ref=e113]: Lots / Serial Numbers
+          - generic [ref=e114]:
+            - navigation [ref=e121]:
+              - link "View" [ref=e122] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products/products/9
+                - img [ref=e123]
+                - generic [ref=e126]: View
+              - link "Edit" [ref=e127] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products/products/9/edit
+                - img [ref=e128]
+                - generic [ref=e130]: Edit
+              - link "Attributes" [ref=e131] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products/products/9/attributes
+                - img [ref=e132]
+                - generic [ref=e134]: Attributes
+              - link "Variants" [ref=e135] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products/products/9/variants
+                - img [ref=e136]
+                - generic [ref=e138]: Variants
+              - link "Quantities" [ref=e139] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products/products/9/quantities
+                - img [ref=e140]
+                - generic [ref=e142]: Quantities
+              - link "IN/OUT" [ref=e143] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products/products/9/moves
+                - img [ref=e144]
+                - generic [ref=e146]: IN/OUT
+            - generic [ref=e151]:
+              - tablist [ref=e152]:
+                - tab "Default" [ref=e153] [cursor=pointer]:
+                  - img [ref=e154]
+                  - generic [ref=e156]: Default
+                - tab "Internal Locations" [ref=e157] [cursor=pointer]:
+                  - img [ref=e158]
+                  - generic [ref=e160]: Internal Locations
+                - tab "Transit Locations" [ref=e161] [cursor=pointer]:
+                  - img [ref=e162]
+                  - generic [ref=e166]: Transit Locations
+                - tab "On Hand" [ref=e167] [cursor=pointer]:
+                  - img [ref=e168]
+                  - generic [ref=e171]: On Hand
+                - tab "To Count" [ref=e172] [cursor=pointer]:
+                  - img [ref=e173]
+                  - generic [ref=e175]: To Count
+                - tab "To Apply" [ref=e176] [cursor=pointer]:
+                  - img [ref=e177]
+                  - generic [ref=e179]: To Apply
+                - button "Views" [ref=e183] [cursor=pointer]:
+                  - img [ref=e184]
+              - generic [ref=e190]:
+                - generic [ref=e191]:
+                  - button "Add Quantity" [ref=e194] [cursor=pointer]:
+                    - img [ref=e195]
+                    - text: Add Quantity
+                  - generic [ref=e199]:
+                    - generic [ref=e200]: Search
+                    - generic [ref=e201]:
+                      - img [ref=e203]
+                      - searchbox "Search" [ref=e206]
+                - table [ref=e208]:
+                  - rowgroup [ref=e209]:
+                    - row "Location Storage Category On Hand Quantity Reserved Quantity Action" [ref=e210]:
+                      - columnheader "Location" [ref=e211]:
+                        - button "Location" [ref=e212] [cursor=pointer]:
+                          - text: Location
+                          - img [ref=e213]
+                      - columnheader "Storage Category" [ref=e215]:
+                        - button "Storage Category" [ref=e216] [cursor=pointer]:
+                          - text: Storage Category
+                          - img [ref=e217]
+                      - columnheader "On Hand Quantity" [ref=e219]:
+                        - button "On Hand Quantity" [ref=e220] [cursor=pointer]:
+                          - text: On Hand Quantity
+                          - img [ref=e221]
+                      - columnheader "Reserved Quantity" [ref=e223]:
+                        - button "Reserved Quantity" [ref=e224] [cursor=pointer]:
+                          - text: Reserved Quantity
+                          - img [ref=e225]
+                      - columnheader "Action" [ref=e227]
+                  - rowgroup [ref=e228]:
+                    - row "32957/Input — 10.0000 0.0000 Delete" [ref=e229]:
+                      - cell "32957/Input" [ref=e230]:
+                        - generic [ref=e232]: 32957/Input
+                      - cell "—" [ref=e233]:
+                        - paragraph [ref=e236]: —
+                      - cell "10.0000" [ref=e237]:
+                        - textbox [ref=e242]: "10.0000"
+                      - cell "0.0000" [ref=e243]:
+                        - generic [ref=e245]: "0.0000"
+                      - cell "Delete" [ref=e246]:
+                        - button "Delete" [ref=e248] [cursor=pointer]:
+                          - img [ref=e249]
+                          - text: Delete
+                    - row "Summary Sum 10 Sum 0" [ref=e251]:
+                      - cell "Summary" [ref=e252]
+                      - cell "Sum 10" [ref=e253]:
+                        - generic [ref=e254]:
+                          - generic [ref=e255]: Sum
+                          - generic [ref=e256]: "10"
+                      - cell "Sum 0" [ref=e257]:
+                        - generic [ref=e258]:
+                          - generic [ref=e259]: Sum
+                          - generic [ref=e260]: "0"
+                      - cell [ref=e261]
+  - generic:
+    - status
+```

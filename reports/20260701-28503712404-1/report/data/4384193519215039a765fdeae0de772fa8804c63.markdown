@@ -1,0 +1,126 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e3]:
+    - button [ref=e6] [cursor=pointer]:
+      - img [ref=e7]
+    - link "YourERP logo" [ref=e18] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - img "YourERP logo" [ref=e19]
+    - list [ref=e20]:
+      - listitem [ref=e21]:
+        - link "Plugins" [ref=e23] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/plugins
+      - listitem [ref=e24]:
+        - link "Plugin" [ref=e25] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/plugins
+          - generic [ref=e26]: Plugin
+    - generic [ref=e27]:
+      - generic [ref=e30]:
+        - generic [ref=e31]: Global search
+        - generic [ref=e32]:
+          - img [ref=e34]
+          - searchbox "Global search" [ref=e37]
+      - generic [ref=e40]:
+        - button "Notifications" [disabled]:
+          - img
+      - button "User menu" [ref=e43] [cursor=pointer]:
+        - img "Avatar of Example" [ref=e44]
+  - generic [ref=e45]:
+    - complementary [ref=e46]:
+      - navigation [ref=e47]:
+        - list [ref=e48]:
+          - list [ref=e49]:
+            - listitem [ref=e50]:
+              - link "Plugin" [ref=e51] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/plugins
+                - generic [ref=e52]: Plugin
+    - main [ref=e54]:
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - generic [ref=e58]:
+            - navigation [ref=e59]:
+              - list [ref=e60]:
+                - listitem [ref=e61]:
+                  - link "Plugin" [ref=e62] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/plugins
+                - listitem [ref=e63]:
+                  - img [ref=e64]
+                  - generic [ref=e66]: List
+            - heading "Plugins" [level=1] [ref=e67]
+          - button "Sync Available Plugins" [ref=e70] [cursor=pointer]:
+            - img [ref=e71]
+            - text: Sync Available Plugins
+        - generic [ref=e75]:
+          - tablist [ref=e79]:
+            - tab "Apps 16" [ref=e80] [cursor=pointer]:
+              - generic [ref=e81]: Apps
+              - generic [ref=e84]: "16"
+            - tab "Extra 3" [ref=e85] [cursor=pointer]:
+              - generic [ref=e86]: Extra
+              - generic [ref=e89]: "3"
+            - tab "Installed 0" [ref=e90] [cursor=pointer]:
+              - generic [ref=e91]: Installed
+              - generic [ref=e94]: "0"
+            - tab "Not Installed 19" [ref=e95] [cursor=pointer]:
+              - generic [ref=e96]: Not Installed
+              - generic [ref=e99]: "19"
+          - generic [ref=e102]:
+            - generic [ref=e104]:
+              - generic [ref=e108]:
+                - generic [ref=e109]: Search
+                - generic [ref=e110]:
+                  - img [ref=e112]
+                  - searchbox "Search" [ref=e115]: Sales
+              - generic [ref=e116]:
+                - generic [ref=e117]:
+                  - generic [ref=e118]: Active filters
+                  - generic [ref=e120]:
+                    - generic [ref=e122]: "Search: Sales"
+                    - button "Remove filter" [ref=e123] [cursor=pointer]:
+                      - img [ref=e124]
+                      - generic [ref=e126]: Remove filter
+                - button "Remove all filters" [ref=e127] [cursor=pointer]:
+                  - img [ref=e128]
+              - generic [ref=e133]:
+                - button "Sales 1.0.0 Sales pipeline and opportunity management Not Installed 2 Dependencies" [ref=e135] [cursor=pointer]:
+                  - generic [ref=e137]:
+                    - img [ref=e140]
+                    - generic [ref=e142]:
+                      - generic [ref=e144]:
+                        - generic [ref=e146]: Sales
+                        - generic [ref=e149]: 1.0.0
+                      - generic [ref=e151]: Sales pipeline and opportunity management
+                      - generic [ref=e153]:
+                        - generic [ref=e156]: Not Installed
+                        - generic [ref=e159]: 2 Dependencies
+                - generic [ref=e162] [cursor=pointer]:
+                  - button "Actions" [disabled]:
+                    - img
+              - navigation "Pagination navigation" [ref=e163]:
+                - generic [ref=e164]: Showing 1 result
+                - generic [ref=e167]:
+                  - generic [ref=e169]: Per page
+                  - combobox "Per page" [ref=e171]:
+                    - option "16" [selected]
+                    - option "24"
+                    - option "32"
+            - generic:
+              - dialog:
+                - generic [ref=e174]:
+                  - generic [ref=e175]:
+                    - button "Close" [disabled]:
+                      - img
+                    - img [ref=e178]
+                    - generic [ref=e180]:
+                      - heading "Install Plugin sales" [level=2] [ref=e181]
+                      - paragraph [ref=e182]: Are you sure you want to install the 'sales' plugin? This will run migrations and seeders.
+                  - generic [ref=e184]:
+                    - button "Cancel" [disabled]
+                    - button "Install Plugin" [disabled]:
+                      - img
+                      - generic: Install Plugin
+  - generic:
+    - status
+```

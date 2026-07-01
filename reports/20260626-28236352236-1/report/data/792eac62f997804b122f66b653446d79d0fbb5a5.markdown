@@ -1,0 +1,223 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - navigation [ref=e3]:
+    - button [ref=e6] [cursor=pointer]:
+      - img [ref=e7]
+    - link "YourERP logo" [ref=e18] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - img "YourERP logo" [ref=e19]
+    - list [ref=e20]:
+      - listitem [ref=e21]:
+        - link "Inventory" [ref=e23] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/operations
+      - listitem [ref=e24]:
+        - link "Operations" [ref=e25] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/operations
+          - generic [ref=e26]: Operations
+      - listitem [ref=e27]:
+        - link "Products" [ref=e28] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/products
+          - generic [ref=e29]: Products
+      - listitem [ref=e30]:
+        - link "Reporting" [ref=e31] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/reporting
+          - generic [ref=e32]: Reporting
+      - listitem [ref=e33]:
+        - link "Configurations" [ref=e34] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/configurations
+          - generic [ref=e35]: Configurations
+      - listitem [ref=e36]:
+        - link "Settings" [ref=e37] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/settings
+          - generic [ref=e38]: Settings
+    - generic [ref=e39]:
+      - generic [ref=e42]:
+        - generic [ref=e43]: Global search
+        - generic [ref=e44]:
+          - img [ref=e46]
+          - searchbox "Global search" [ref=e49]
+      - button "Notifications" [ref=e53] [cursor=pointer]:
+        - img [ref=e54]
+      - button "User menu" [ref=e58] [cursor=pointer]:
+        - img "Avatar of Example" [ref=e59]
+  - generic [ref=e60]:
+    - complementary [ref=e61]:
+      - navigation [ref=e62]:
+        - list [ref=e63]:
+          - list [ref=e64]:
+            - listitem [ref=e65]:
+              - link "Operations" [ref=e66] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/operations
+                - generic [ref=e67]: Operations
+            - listitem [ref=e68]:
+              - link "Products" [ref=e69] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products
+                - generic [ref=e70]: Products
+            - listitem [ref=e71]:
+              - link "Reporting" [ref=e72] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/reporting
+                - generic [ref=e73]: Reporting
+            - listitem [ref=e74]:
+              - link "Configurations" [ref=e75] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/configurations
+                - generic [ref=e76]: Configurations
+            - listitem [ref=e77]:
+              - link "Settings" [ref=e78] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/settings
+                - generic [ref=e79]: Settings
+    - main [ref=e81]:
+      - generic [ref=e83]:
+        - generic [ref=e84]:
+          - generic [ref=e85]:
+            - navigation [ref=e86]:
+              - list [ref=e87]:
+                - listitem [ref=e88]:
+                  - link "Operations" [ref=e89] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/operations
+                - listitem [ref=e90]:
+                  - img [ref=e91]
+                  - link "Internal Transfers" [ref=e93] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/operations/internals
+                - listitem [ref=e94]:
+                  - img [ref=e95]
+                  - generic [ref=e97]: List
+            - heading "Internal Transfers" [level=1] [ref=e98]
+          - link "New Internal Transfer" [ref=e101] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/inventory/operations/internals/create
+            - img [ref=e102]
+            - text: New Internal Transfer
+        - generic [ref=e104]:
+          - list [ref=e106]:
+            - listitem [ref=e107]:
+              - generic [ref=e108] [cursor=pointer]:
+                - generic [ref=e109]: Transfers
+                - button "Transfers" [expanded] [ref=e110]:
+                  - img [ref=e111]
+              - list [ref=e113]:
+                - listitem [ref=e114]:
+                  - link "Receipts" [ref=e115] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/operations/receipts
+                    - img [ref=e116]
+                    - generic [ref=e118]: Receipts
+                - listitem [ref=e119]:
+                  - link "Deliveries" [ref=e120] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/operations/deliveries
+                    - img [ref=e121]
+                    - generic [ref=e123]: Deliveries
+                - listitem [ref=e124]:
+                  - link "Internal Transfers" [ref=e125] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/operations/internals
+                    - img [ref=e126]
+                    - generic [ref=e128]: Internal Transfers
+            - listitem [ref=e129]:
+              - generic [ref=e130] [cursor=pointer]:
+                - generic [ref=e131]: Adjustments
+                - button "Adjustments" [expanded] [ref=e132]:
+                  - img [ref=e133]
+              - list [ref=e135]:
+                - listitem [ref=e136]:
+                  - link "Quantities" [ref=e137] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/operations/quantities
+                    - img [ref=e138]
+                    - generic [ref=e140]: Quantities
+                - listitem [ref=e141]:
+                  - link "Scraps" [ref=e142] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/operations/scraps
+                    - img [ref=e143]
+                    - generic [ref=e145]: Scraps
+          - generic [ref=e147]:
+            - tablist [ref=e148]:
+              - tab "Default" [ref=e149] [cursor=pointer]:
+                - img [ref=e150]
+                - generic [ref=e152]: Default
+              - tab "To Do" [ref=e153] [cursor=pointer]:
+                - img [ref=e154]
+                - generic [ref=e157]: To Do
+              - tab "My Transfers" [ref=e158] [cursor=pointer]:
+                - img [ref=e159]
+                - generic [ref=e161]: My Transfers
+              - tab "Starred" [ref=e162] [cursor=pointer]:
+                - img [ref=e163]
+                - generic [ref=e165]: Starred
+              - tab "Draft" [ref=e166] [cursor=pointer]:
+                - img [ref=e167]
+                - generic [ref=e170]: Draft
+              - tab "Waiting" [ref=e171] [cursor=pointer]:
+                - img [ref=e172]
+                - generic [ref=e174]: Waiting
+              - tab "Ready" [ref=e175] [cursor=pointer]:
+                - img [ref=e176]
+                - generic [ref=e178]: Ready
+              - tab "Done" [ref=e179] [cursor=pointer]:
+                - img [ref=e180]
+                - generic [ref=e182]: Done
+              - button "Views" [ref=e186] [cursor=pointer]:
+                - img [ref=e187]
+            - generic [ref=e193]:
+              - generic [ref=e195]:
+                - generic [ref=e200]:
+                  - generic [ref=e202]: Group by
+                  - combobox "Group by" [ref=e204]:
+                    - option "-" [selected]
+                    - option "State"
+                    - option "Source Document"
+                    - option "Operation Type"
+                    - option "Schedule At"
+                    - option "Created At"
+                - generic [ref=e205]:
+                  - generic [ref=e206]:
+                    - generic [ref=e207]: Search
+                    - generic [ref=e208]:
+                      - img [ref=e210]
+                      - searchbox "Search" [active] [ref=e213]: E2E Internal List 1782475456261
+                  - button "Filter" [ref=e216] [cursor=pointer]:
+                    - img [ref=e217]
+                    - generic [ref=e220]: "0"
+                  - button "Column manager" [ref=e223] [cursor=pointer]:
+                    - img [ref=e224]
+              - generic [ref=e226]:
+                - generic [ref=e227]:
+                  - generic [ref=e228]: Active filters
+                  - generic [ref=e230]:
+                    - generic [ref=e232]: "Search: E2E Internal List 1782475456261"
+                    - button "Remove filter" [ref=e233] [cursor=pointer]:
+                      - img [ref=e234]
+                      - generic [ref=e236]: Remove filter
+                - button "Remove all filters" [ref=e237] [cursor=pointer]:
+                  - img [ref=e238]
+              - table [ref=e241]:
+                - rowgroup [ref=e242]:
+                  - row "Favorite Reference Contact Scheduled At Source Document Company State" [ref=e243]:
+                    - columnheader "Favorite" [ref=e244]
+                    - columnheader "Reference" [ref=e245]:
+                      - button "Reference" [ref=e246] [cursor=pointer]:
+                        - text: Reference
+                        - img [ref=e247]
+                    - columnheader "Contact" [ref=e249]:
+                      - button "Contact" [ref=e250] [cursor=pointer]:
+                        - text: Contact
+                        - img [ref=e251]
+                    - columnheader "Scheduled At" [ref=e253]:
+                      - button "Scheduled At" [ref=e254] [cursor=pointer]:
+                        - text: Scheduled At
+                        - img [ref=e255]
+                    - columnheader "Source Document" [ref=e257]:
+                      - button "Source Document" [ref=e258] [cursor=pointer]:
+                        - text: Source Document
+                        - img [ref=e259]
+                    - columnheader "Company" [ref=e261]:
+                      - button "Company" [ref=e262] [cursor=pointer]:
+                        - text: Company
+                        - img [ref=e263]
+                    - columnheader "State" [ref=e265]:
+                      - button "State" [ref=e266] [cursor=pointer]:
+                        - text: State
+                        - img [ref=e267]
+              - generic [ref=e270]:
+                - img [ref=e272]
+                - heading "No Internal Transfers" [level=2] [ref=e274]
+  - generic:
+    - status
+```

@@ -1,0 +1,495 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - navigation [ref=e3]:
+    - button [ref=e6] [cursor=pointer]:
+      - img [ref=e7]
+    - link "YourERP logo" [ref=e18] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - img "YourERP logo" [ref=e19]
+    - list [ref=e20]:
+      - listitem [ref=e21]:
+        - link "Inventory" [ref=e23] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/operations
+      - listitem [ref=e24]:
+        - link "Operations" [ref=e25] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/operations
+          - generic [ref=e26]: Operations
+      - listitem [ref=e27]:
+        - link "Products" [ref=e28] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/products
+          - generic [ref=e29]: Products
+      - listitem [ref=e30]:
+        - link "Reporting" [ref=e31] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/reporting
+          - generic [ref=e32]: Reporting
+      - listitem [ref=e33]:
+        - link "Configurations" [ref=e34] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/configurations
+          - generic [ref=e35]: Configurations
+      - listitem [ref=e36]:
+        - link "Settings" [ref=e37] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/settings
+          - generic [ref=e38]: Settings
+    - generic [ref=e39]:
+      - generic [ref=e42]:
+        - generic [ref=e43]: Global search
+        - generic [ref=e44]:
+          - img [ref=e46]
+          - searchbox "Global search" [ref=e49]
+      - button "Notifications" [ref=e53] [cursor=pointer]:
+        - img [ref=e54]
+      - button "User menu" [ref=e58] [cursor=pointer]:
+        - img "Avatar of Example" [ref=e59]
+  - generic [ref=e60]:
+    - complementary [ref=e61]:
+      - navigation [ref=e62]:
+        - list [ref=e63]:
+          - list [ref=e64]:
+            - listitem [ref=e65]:
+              - link "Operations" [ref=e66] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/operations
+                - generic [ref=e67]: Operations
+            - listitem [ref=e68]:
+              - link "Products" [ref=e69] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products
+                - generic [ref=e70]: Products
+            - listitem [ref=e71]:
+              - link "Reporting" [ref=e72] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/reporting
+                - generic [ref=e73]: Reporting
+            - listitem [ref=e74]:
+              - link "Configurations" [ref=e75] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/configurations
+                - generic [ref=e76]: Configurations
+            - listitem [ref=e77]:
+              - link "Settings" [ref=e78] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/settings
+                - generic [ref=e79]: Settings
+    - main [ref=e81]:
+      - generic [ref=e83]:
+        - generic [ref=e84]:
+          - generic [ref=e85]:
+            - navigation [ref=e86]:
+              - list [ref=e87]:
+                - listitem [ref=e88]:
+                  - link "Configurations" [ref=e89] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations
+                - listitem [ref=e90]:
+                  - img [ref=e91]
+                  - link "Operation Types" [ref=e93] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types
+                - listitem [ref=e94]:
+                  - img [ref=e95]
+                  - generic [ref=e97]: List
+            - heading "Operation Types" [level=1] [ref=e98]
+          - link "New Operation Type" [ref=e101] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/create
+            - img [ref=e102]
+            - text: New Operation Type
+        - generic [ref=e104]:
+          - list [ref=e106]:
+            - listitem [ref=e107]:
+              - generic [ref=e108] [cursor=pointer]:
+                - generic [ref=e109]: Warehouse Management
+                - button "Warehouse Management" [disabled] [expanded]:
+                  - img
+              - list [ref=e110]:
+                - listitem [ref=e111]:
+                  - link "Warehouses" [ref=e112] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/warehouses
+                    - img [ref=e113]
+                    - generic [ref=e115]: Warehouses
+                - listitem [ref=e116]:
+                  - link "Locations" [ref=e117] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/locations
+                    - img [ref=e118]
+                    - generic [ref=e121]: Locations
+                - listitem [ref=e122]:
+                  - link "Operation Types" [ref=e123] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types
+                    - img [ref=e124]
+                    - generic [ref=e126]: Operation Types
+                - listitem [ref=e127]:
+                  - link "Routes" [ref=e128] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/routes
+                    - img [ref=e129]
+                    - generic [ref=e131]: Routes
+                - listitem [ref=e132]:
+                  - link "Rules" [ref=e133] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/rules
+                    - img [ref=e134]
+                    - generic [ref=e136]: Rules
+                - listitem [ref=e137]:
+                  - link "Storage Categories" [ref=e138] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/storage-categories
+                    - img [ref=e139]
+                    - generic [ref=e141]: Storage Categories
+                - listitem [ref=e142]:
+                  - link "Putaway Rules" [ref=e143] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/putaway-rules
+                    - img [ref=e144]
+                    - generic [ref=e146]: Putaway Rules
+            - listitem [ref=e147]:
+              - generic [ref=e148] [cursor=pointer]:
+                - generic [ref=e149]: Products
+                - button "Products" [disabled] [expanded]:
+                  - img
+              - list [ref=e150]:
+                - listitem [ref=e151]:
+                  - link "Categories" [ref=e152] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/product-categories
+                    - img [ref=e153]
+                    - generic [ref=e155]: Categories
+                - listitem [ref=e156]:
+                  - link "Attributes" [ref=e157] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/product-attributes
+                    - img [ref=e158]
+                    - generic [ref=e160]: Attributes
+                - listitem [ref=e161]:
+                  - link "Packagings" [ref=e162] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/packagings
+                    - img [ref=e163]
+                    - generic [ref=e165]: Packagings
+            - listitem [ref=e166]:
+              - generic [ref=e167] [cursor=pointer]:
+                - generic [ref=e168]: Delivery
+                - button "Delivery" [disabled] [expanded]:
+                  - img
+              - list [ref=e169]:
+                - listitem [ref=e170]:
+                  - link "Package Types" [ref=e171] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/package-types
+                    - img [ref=e172]
+                    - generic [ref=e174]: Package Types
+          - generic [ref=e176]:
+            - tablist [ref=e180]:
+              - tab "All 13" [ref=e181] [cursor=pointer]:
+                - generic [ref=e182]: All
+                - generic [ref=e185]: "13"
+              - tab "Archived 12" [ref=e186] [cursor=pointer]:
+                - generic [ref=e187]: Archived
+                - generic [ref=e190]: "12"
+            - generic [ref=e195]:
+              - generic [ref=e197]:
+                - generic [ref=e202]:
+                  - generic [ref=e204]: Group by
+                  - combobox "Group by" [ref=e206]:
+                    - option "-" [selected]
+                    - option "Warehouse"
+                    - option "Type"
+                    - option "Created At"
+                    - option "Updated At"
+                - generic [ref=e207]:
+                  - generic [ref=e208]:
+                    - generic [ref=e209]: Search
+                    - generic [ref=e210]:
+                      - img [ref=e212]
+                      - searchbox "Search" [active] [ref=e216]: WH 2Step 1782475265953
+                  - button "Filter" [disabled] [ref=e219]:
+                    - img [ref=e220]
+                    - generic [ref=e223]: "0"
+                  - button "Column manager" [disabled] [ref=e226]:
+                    - img [ref=e227]
+              - table [ref=e230]:
+                - rowgroup [ref=e231]:
+                  - row "Select/deselect all items for bulk actions. Name Company Warehouse Actions" [ref=e232]:
+                    - columnheader "Select/deselect all items for bulk actions." [ref=e233]:
+                      - checkbox "Select/deselect all items for bulk actions." [disabled]
+                    - columnheader "Name" [ref=e234]
+                    - columnheader "Company" [ref=e235]
+                    - columnheader "Warehouse" [ref=e236]
+                    - columnheader "Actions" [ref=e237]
+                - rowgroup [ref=e238]:
+                  - row "Select/deselect item 1 for bulk actions. Receipts DummyCorp LLC Your Company View Edit Delete" [ref=e239]:
+                    - cell "Select/deselect item 1 for bulk actions." [ref=e240]:
+                      - checkbox "Select/deselect item 1 for bulk actions." [disabled]
+                    - cell "Receipts" [ref=e241]:
+                      - link "Receipts" [ref=e242] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/1
+                        - generic [ref=e243]: Receipts
+                    - cell "DummyCorp LLC" [ref=e244]:
+                      - link "DummyCorp LLC" [ref=e245] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/1
+                        - generic [ref=e246]: DummyCorp LLC
+                    - cell "Your Company" [ref=e247]:
+                      - link "Your Company" [ref=e248] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/1
+                        - generic [ref=e249]: Your Company
+                    - cell "View Edit Delete" [ref=e250]:
+                      - generic [ref=e251]:
+                        - link "View" [ref=e252] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/1
+                          - img [ref=e253]
+                          - text: View
+                        - link "Edit" [ref=e256] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/1/edit
+                          - img [ref=e257]
+                          - text: Edit
+                        - button "Delete" [ref=e260] [cursor=pointer]:
+                          - img [ref=e261]
+                          - text: Delete
+                  - row "Select/deselect item 2 for bulk actions. Delivery Orders DummyCorp LLC Your Company View Edit Delete" [ref=e263]:
+                    - cell "Select/deselect item 2 for bulk actions." [ref=e264]:
+                      - checkbox "Select/deselect item 2 for bulk actions." [disabled]
+                    - cell "Delivery Orders" [ref=e265]:
+                      - link "Delivery Orders" [ref=e266] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/2
+                        - generic [ref=e267]: Delivery Orders
+                    - cell "DummyCorp LLC" [ref=e268]:
+                      - link "DummyCorp LLC" [ref=e269] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/2
+                        - generic [ref=e270]: DummyCorp LLC
+                    - cell "Your Company" [ref=e271]:
+                      - link "Your Company" [ref=e272] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/2
+                        - generic [ref=e273]: Your Company
+                    - cell "View Edit Delete" [ref=e274]:
+                      - generic [ref=e275]:
+                        - link "View" [ref=e276] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/2
+                          - img [ref=e277]
+                          - text: View
+                        - link "Edit" [ref=e280] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/2/edit
+                          - img [ref=e281]
+                          - text: Edit
+                        - button "Delete" [ref=e284] [cursor=pointer]:
+                          - img [ref=e285]
+                          - text: Delete
+                  - row "Select/deselect item 7 for bulk actions. Internal Transfers DummyCorp LLC Your Company View Edit Delete" [ref=e287]:
+                    - cell "Select/deselect item 7 for bulk actions." [ref=e288]:
+                      - checkbox "Select/deselect item 7 for bulk actions." [disabled]
+                    - cell "Internal Transfers" [ref=e289]:
+                      - link "Internal Transfers" [ref=e290] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/7
+                        - generic [ref=e291]: Internal Transfers
+                    - cell "DummyCorp LLC" [ref=e292]:
+                      - link "DummyCorp LLC" [ref=e293] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/7
+                        - generic [ref=e294]: DummyCorp LLC
+                    - cell "Your Company" [ref=e295]:
+                      - link "Your Company" [ref=e296] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/7
+                        - generic [ref=e297]: Your Company
+                    - cell "View Edit Delete" [ref=e298]:
+                      - generic [ref=e299]:
+                        - link "View" [ref=e300] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/7
+                          - img [ref=e301]
+                          - text: View
+                        - link "Edit" [ref=e304] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/7/edit
+                          - img [ref=e305]
+                          - text: Edit
+                        - button "Delete" [ref=e308] [cursor=pointer]:
+                          - img [ref=e309]
+                          - text: Delete
+                  - row "Select/deselect item 9 for bulk actions. Dropship DummyCorp LLC View Edit Delete" [ref=e311]:
+                    - cell "Select/deselect item 9 for bulk actions." [ref=e312]:
+                      - checkbox "Select/deselect item 9 for bulk actions." [disabled]
+                    - cell "Dropship" [ref=e313]:
+                      - link "Dropship" [ref=e314] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/9
+                        - generic [ref=e315]: Dropship
+                    - cell "DummyCorp LLC" [ref=e316]:
+                      - link "DummyCorp LLC" [ref=e317] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/9
+                        - generic [ref=e318]: DummyCorp LLC
+                    - cell [ref=e319]:
+                      - link [ref=e320] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/9
+                    - cell "View Edit Delete" [ref=e322]:
+                      - generic [ref=e323]:
+                        - link "View" [ref=e324] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/9
+                          - img [ref=e325]
+                          - text: View
+                        - link "Edit" [ref=e328] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/9/edit
+                          - img [ref=e329]
+                          - text: Edit
+                        - button "Delete" [ref=e332] [cursor=pointer]:
+                          - img [ref=e333]
+                          - text: Delete
+                  - row "Select/deselect item 10 for bulk actions. Receipts DummyCorp LLC WH 1Step 1782475245211 View Edit Delete" [ref=e335]:
+                    - cell "Select/deselect item 10 for bulk actions." [ref=e336]:
+                      - checkbox "Select/deselect item 10 for bulk actions." [disabled]
+                    - cell "Receipts" [ref=e337]:
+                      - link "Receipts" [ref=e338] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/10
+                        - generic [ref=e339]: Receipts
+                    - cell "DummyCorp LLC" [ref=e340]:
+                      - link "DummyCorp LLC" [ref=e341] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/10
+                        - generic [ref=e342]: DummyCorp LLC
+                    - cell "WH 1Step 1782475245211" [ref=e343]:
+                      - link "WH 1Step 1782475245211" [ref=e344] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/10
+                        - generic [ref=e345]: WH 1Step 1782475245211
+                    - cell "View Edit Delete" [ref=e346]:
+                      - generic [ref=e347]:
+                        - link "View" [ref=e348] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/10
+                          - img [ref=e349]
+                          - text: View
+                        - link "Edit" [ref=e352] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/10/edit
+                          - img [ref=e353]
+                          - text: Edit
+                        - button "Delete" [ref=e356] [cursor=pointer]:
+                          - img [ref=e357]
+                          - text: Delete
+                  - row "Select/deselect item 11 for bulk actions. Delivery Orders DummyCorp LLC WH 1Step 1782475245211 View Edit Delete" [ref=e359]:
+                    - cell "Select/deselect item 11 for bulk actions." [ref=e360]:
+                      - checkbox "Select/deselect item 11 for bulk actions." [disabled]
+                    - cell "Delivery Orders" [ref=e361]:
+                      - link "Delivery Orders" [ref=e362] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/11
+                        - generic [ref=e363]: Delivery Orders
+                    - cell "DummyCorp LLC" [ref=e364]:
+                      - link "DummyCorp LLC" [ref=e365] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/11
+                        - generic [ref=e366]: DummyCorp LLC
+                    - cell "WH 1Step 1782475245211" [ref=e367]:
+                      - link "WH 1Step 1782475245211" [ref=e368] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/11
+                        - generic [ref=e369]: WH 1Step 1782475245211
+                    - cell "View Edit Delete" [ref=e370]:
+                      - generic [ref=e371]:
+                        - link "View" [ref=e372] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/11
+                          - img [ref=e373]
+                          - text: View
+                        - link "Edit" [ref=e376] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/11/edit
+                          - img [ref=e377]
+                          - text: Edit
+                        - button "Delete" [ref=e380] [cursor=pointer]:
+                          - img [ref=e381]
+                          - text: Delete
+                  - row "Select/deselect item 16 for bulk actions. Internal Transfers DummyCorp LLC WH 1Step 1782475245211 View Edit Delete" [ref=e383]:
+                    - cell "Select/deselect item 16 for bulk actions." [ref=e384]:
+                      - checkbox "Select/deselect item 16 for bulk actions." [disabled]
+                    - cell "Internal Transfers" [ref=e385]:
+                      - link "Internal Transfers" [ref=e386] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/16
+                        - generic [ref=e387]: Internal Transfers
+                    - cell "DummyCorp LLC" [ref=e388]:
+                      - link "DummyCorp LLC" [ref=e389] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/16
+                        - generic [ref=e390]: DummyCorp LLC
+                    - cell "WH 1Step 1782475245211" [ref=e391]:
+                      - link "WH 1Step 1782475245211" [ref=e392] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/16
+                        - generic [ref=e393]: WH 1Step 1782475245211
+                    - cell "View Edit Delete" [ref=e394]:
+                      - generic [ref=e395]:
+                        - link "View" [ref=e396] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/16
+                          - img [ref=e397]
+                          - text: View
+                        - link "Edit" [ref=e400] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/16/edit
+                          - img [ref=e401]
+                          - text: Edit
+                        - button "Delete" [ref=e404] [cursor=pointer]:
+                          - img [ref=e405]
+                          - text: Delete
+                  - row "Select/deselect item 18 for bulk actions. Receipts DummyCorp LLC WH 2Step 1782475265953 View Edit Delete" [ref=e407]:
+                    - cell "Select/deselect item 18 for bulk actions." [ref=e408]:
+                      - checkbox "Select/deselect item 18 for bulk actions." [disabled]
+                    - cell "Receipts" [ref=e409]:
+                      - link "Receipts" [ref=e410] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/18
+                        - generic [ref=e411]: Receipts
+                    - cell "DummyCorp LLC" [ref=e412]:
+                      - link "DummyCorp LLC" [ref=e413] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/18
+                        - generic [ref=e414]: DummyCorp LLC
+                    - cell "WH 2Step 1782475265953" [ref=e415]:
+                      - link "WH 2Step 1782475265953" [ref=e416] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/18
+                        - generic [ref=e417]: WH 2Step 1782475265953
+                    - cell "View Edit Delete" [ref=e418]:
+                      - generic [ref=e419]:
+                        - link "View" [ref=e420] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/18
+                          - img [ref=e421]
+                          - text: View
+                        - link "Edit" [ref=e424] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/18/edit
+                          - img [ref=e425]
+                          - text: Edit
+                        - button "Delete" [ref=e428] [cursor=pointer]:
+                          - img [ref=e429]
+                          - text: Delete
+                  - row "Select/deselect item 19 for bulk actions. Delivery Orders DummyCorp LLC WH 2Step 1782475265953 View Edit Delete" [ref=e431]:
+                    - cell "Select/deselect item 19 for bulk actions." [ref=e432]:
+                      - checkbox "Select/deselect item 19 for bulk actions." [disabled]
+                    - cell "Delivery Orders" [ref=e433]:
+                      - link "Delivery Orders" [ref=e434] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/19
+                        - generic [ref=e435]: Delivery Orders
+                    - cell "DummyCorp LLC" [ref=e436]:
+                      - link "DummyCorp LLC" [ref=e437] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/19
+                        - generic [ref=e438]: DummyCorp LLC
+                    - cell "WH 2Step 1782475265953" [ref=e439]:
+                      - link "WH 2Step 1782475265953" [ref=e440] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/19
+                        - generic [ref=e441]: WH 2Step 1782475265953
+                    - cell "View Edit Delete" [ref=e442]:
+                      - generic [ref=e443]:
+                        - link "View" [ref=e444] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/19
+                          - img [ref=e445]
+                          - text: View
+                        - link "Edit" [ref=e448] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/19/edit
+                          - img [ref=e449]
+                          - text: Edit
+                        - button "Delete" [ref=e452] [cursor=pointer]:
+                          - img [ref=e453]
+                          - text: Delete
+                  - row "Select/deselect item 20 for bulk actions. Pick DummyCorp LLC WH 2Step 1782475265953 View Edit Delete" [ref=e455]:
+                    - cell "Select/deselect item 20 for bulk actions." [ref=e456]:
+                      - checkbox "Select/deselect item 20 for bulk actions." [disabled]
+                    - cell "Pick" [ref=e457]:
+                      - link "Pick" [ref=e458] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/20
+                        - generic [ref=e459]: Pick
+                    - cell "DummyCorp LLC" [ref=e460]:
+                      - link "DummyCorp LLC" [ref=e461] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/20
+                        - generic [ref=e462]: DummyCorp LLC
+                    - cell "WH 2Step 1782475265953" [ref=e463]:
+                      - link "WH 2Step 1782475265953" [ref=e464] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/20
+                        - generic [ref=e465]: WH 2Step 1782475265953
+                    - cell "View Edit Delete" [ref=e466]:
+                      - generic [ref=e467]:
+                        - link "View" [ref=e468] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/20
+                          - img [ref=e469]
+                          - text: View
+                        - link "Edit" [ref=e472] [cursor=pointer]:
+                          - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types/20/edit
+                          - img [ref=e473]
+                          - text: Edit
+                        - button "Delete" [ref=e476] [cursor=pointer]:
+                          - img [ref=e477]
+                          - text: Delete
+              - navigation "Pagination navigation" [ref=e479]:
+                - generic [ref=e482]:
+                  - generic [ref=e484]: Per page
+                  - combobox "Per page" [ref=e486]:
+                    - option "5"
+                    - option "10" [selected]
+                    - option "25"
+                    - option "50"
+                - button "Next" [ref=e487] [cursor=pointer]
+  - generic:
+    - status
+```

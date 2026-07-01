@@ -1,0 +1,192 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - navigation [ref=e3]:
+    - button [ref=e6] [cursor=pointer]:
+      - img [ref=e7]
+    - link "YourERP logo" [ref=e18] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - img "YourERP logo" [ref=e19]
+    - list [ref=e20]:
+      - listitem [ref=e21]:
+        - link "Inventory" [ref=e23] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/operations
+      - listitem [ref=e24]:
+        - link "Operations" [ref=e25] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/operations
+          - generic [ref=e26]: Operations
+      - listitem [ref=e27]:
+        - link "Products" [ref=e28] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/products
+          - generic [ref=e29]: Products
+      - listitem [ref=e30]:
+        - link "Reporting" [ref=e31] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/reporting
+          - generic [ref=e32]: Reporting
+      - listitem [ref=e33]:
+        - link "Configurations" [ref=e34] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/configurations
+          - generic [ref=e35]: Configurations
+      - listitem [ref=e36]:
+        - link "Settings" [ref=e37] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/settings
+          - generic [ref=e38]: Settings
+    - generic [ref=e39]:
+      - generic [ref=e42]:
+        - generic [ref=e43]: Global search
+        - generic [ref=e44]:
+          - img [ref=e46]
+          - searchbox "Global search" [ref=e49]
+      - button "Notifications" [ref=e53] [cursor=pointer]:
+        - img [ref=e54]
+      - button "User menu" [ref=e58] [cursor=pointer]:
+        - img "Avatar of Example" [ref=e59]
+  - generic [ref=e60]:
+    - complementary [ref=e61]:
+      - navigation [ref=e62]:
+        - list [ref=e63]:
+          - list [ref=e64]:
+            - listitem [ref=e65]:
+              - link "Operations" [ref=e66] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/operations
+                - generic [ref=e67]: Operations
+            - listitem [ref=e68]:
+              - link "Products" [ref=e69] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products
+                - generic [ref=e70]: Products
+            - listitem [ref=e71]:
+              - link "Reporting" [ref=e72] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/reporting
+                - generic [ref=e73]: Reporting
+            - listitem [ref=e74]:
+              - link "Configurations" [ref=e75] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/configurations
+                - generic [ref=e76]: Configurations
+            - listitem [ref=e77]:
+              - link "Settings" [ref=e78] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/settings
+                - generic [ref=e79]: Settings
+    - main [ref=e81]:
+      - generic [ref=e83]:
+        - generic [ref=e85]:
+          - navigation [ref=e86]:
+            - list [ref=e87]:
+              - listitem [ref=e88]:
+                - link "Products" [ref=e89] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/inventory/products/products
+              - listitem [ref=e90]:
+                - img [ref=e91]
+                - link "E2E Move Flow 1782475473779" [ref=e93] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/inventory/products/products/12
+              - listitem [ref=e94]:
+                - img [ref=e95]
+                - generic [ref=e97]: Move Lines
+          - heading "Manage E2E Move Flow 1782475473779 Move Lines" [level=1] [ref=e98]
+        - generic [ref=e99]:
+          - list [ref=e101]:
+            - listitem [ref=e102]:
+              - list [ref=e103]:
+                - listitem [ref=e104]:
+                  - link "Products" [ref=e105] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/products/products
+                    - img [ref=e106]
+                    - generic [ref=e108]: Products
+                - listitem [ref=e109]:
+                  - link "Packages" [ref=e110] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/products/packages
+                    - img [ref=e111]
+                    - generic [ref=e113]: Packages
+                - listitem [ref=e114]:
+                  - link "Lots / Serial Numbers" [ref=e115] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/products/lots
+                    - img [ref=e116]
+                    - generic [ref=e118]: Lots / Serial Numbers
+          - generic [ref=e119]:
+            - navigation [ref=e126]:
+              - link "View" [ref=e127] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products/products/12
+                - img [ref=e128]
+                - generic [ref=e131]: View
+              - link "Edit" [ref=e132] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products/products/12/edit
+                - img [ref=e133]
+                - generic [ref=e135]: Edit
+              - link "Attributes" [ref=e136] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products/products/12/attributes
+                - img [ref=e137]
+                - generic [ref=e139]: Attributes
+              - link "Variants" [ref=e140] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products/products/12/variants
+                - img [ref=e141]
+                - generic [ref=e143]: Variants
+              - link "Quantities" [ref=e144] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products/products/12/quantities
+                - img [ref=e145]
+                - generic [ref=e147]: Quantities
+              - link "IN/OUT" [ref=e148] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products/products/12/moves
+                - img [ref=e149]
+                - generic [ref=e151]: IN/OUT
+            - generic [ref=e156]:
+              - tablist [ref=e157]:
+                - tab "Default" [ref=e158] [cursor=pointer]:
+                  - img [ref=e159]
+                  - generic [ref=e161]: Default
+                - tab "To Do" [ref=e162] [cursor=pointer]:
+                  - img [ref=e163]
+                  - generic [ref=e165]: To Do
+                - tab "Done" [active] [ref=e166] [cursor=pointer]:
+                  - img [ref=e167]
+                  - generic [ref=e169]: Done
+                - tab "Incoming" [ref=e170] [cursor=pointer]:
+                  - img [ref=e171]
+                  - generic [ref=e173]: Incoming
+                - tab "Outgoing" [ref=e174] [cursor=pointer]:
+                  - img [ref=e175]
+                  - generic [ref=e177]: Outgoing
+                - tab "Internal" [ref=e178] [cursor=pointer]:
+                  - img [ref=e179]
+                  - generic [ref=e181]: Internal
+                - button "Views" [ref=e185] [cursor=pointer]:
+                  - img [ref=e186]
+              - generic [ref=e192]:
+                - generic [ref=e195]:
+                  - generic [ref=e196]:
+                    - generic [ref=e197]: Search
+                    - generic [ref=e198]:
+                      - img [ref=e200]
+                      - searchbox "Search" [ref=e203]
+                  - button "Column manager" [ref=e206] [cursor=pointer]:
+                    - img [ref=e207]
+                - table [ref=e210]:
+                  - rowgroup [ref=e211]:
+                    - row "Date Reference Package Source Location Destination Location Quantity Done By" [ref=e212]:
+                      - columnheader "Date" [ref=e213]:
+                        - button "Date" [ref=e214] [cursor=pointer]:
+                          - text: Date
+                          - img [ref=e215]
+                      - columnheader "Reference" [ref=e217]:
+                        - button "Reference" [ref=e218] [cursor=pointer]:
+                          - text: Reference
+                          - img [ref=e219]
+                      - columnheader "Package" [ref=e221]:
+                        - button "Package" [ref=e222] [cursor=pointer]:
+                          - text: Package
+                          - img [ref=e223]
+                      - columnheader "Source Location" [ref=e225]
+                      - columnheader "Destination Location" [ref=e226]
+                      - columnheader "Quantity" [ref=e227]:
+                        - button "Quantity" [ref=e228] [cursor=pointer]:
+                          - text: Quantity
+                          - img [ref=e229]
+                      - columnheader "Done By" [ref=e231]:
+                        - button "Done By" [ref=e232] [cursor=pointer]:
+                          - text: Done By
+                          - img [ref=e233]
+                - generic [ref=e236]:
+                  - img [ref=e238]
+                  - heading "No move lines" [level=2] [ref=e240]
+  - generic:
+    - status
+```
