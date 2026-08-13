@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php-versions: [8.3]
+        php-versions: [8.5]
         node-version: ["22.13.1"]
         shard_index: [1, 2, 3, 4, 5, 6]
         shard_total: [6]
