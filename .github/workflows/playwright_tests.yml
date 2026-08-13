@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php-versions: [8.5]
+        php-versions: ['8.5']
         node-version: ["22.13.1"]
         shard_index: [1, 2, 3, 4, 5, 6]
         shard_total: [6]
@@ -132,7 +132,11 @@ jobs:
           cat .env
 
       - name: Install Composer
-        run: composer install --no-scripts --no-interaction --prefer-dist --optimize-autoloader
+        # phpoffice/phpspreadsheet 1.30.6 (via maatwebsite/excel) declares "php <8.5.0" in its
+        # metadata — no stable release lifts that cap yet. Bypass the platform check so the
+        # suite actually runs and tells us whether 8.5 is really broken at runtime, not just
+        # blocked by a conservative upper-bound in someone else's composer.json.
+        run: composer install --no-scripts --no-interaction --prefer-dist --optimize-autoloader --ignore-platform-req=php
 
       - name: Generate APP_KEY (fast, non-Laravel)
         run: php artisan key:generate
