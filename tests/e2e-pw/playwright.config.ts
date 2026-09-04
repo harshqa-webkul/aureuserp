@@ -12,8 +12,16 @@ export const ADMIN_AUTH_STATE_PATH = `${STATE_DIR_PATH}/admin-auth.json`;
 
 dotenv.config({ path: path.resolve(__dirname, "../../.env") });
 
+// Small, text-only reporter (no screenshots/video/trace) that the "Playwright
+// Report" workflow reads to get the real test title, error message and
+// file:line for each failure — the blob/html reporters carry that too, but
+// bundled with the heavy binary attachments this exists to avoid re-adding.
+// Path is per-shard (via env) so merging artifacts from multiple shards
+// doesn't have them overwrite each other.
+const jsonReportFile = process.env.PW_JSON_REPORT_FILE ?? "./test-results.json";
+
 const reporters = process.env.CI
-    ? [["list"], ["blob", { outputDir: "./blob-report" }]]
+    ? [["list"], ["blob", { outputDir: "./blob-report" }], ["json", { outputFile: jsonReportFile }]]
     : [
           ["list"],
           [

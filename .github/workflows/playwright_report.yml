@@ -110,6 +110,40 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ github.token }}
 
+      - name: Extract failure details from test results
+        if: env.TRUSTED == '1'
+        run: |
+          set -euo pipefail
+
+          # Playwright's json reporter (text-only, no screenshots/video/trace —
+          # see playwright.config.ts) gives us the real test title and error
+          # for each failure. Build a lookup, keyed by the same test-results
+          # folder name the screenshot lives in (taken straight from the
+          # reporter's own "screenshot" attachment path, so it's guaranteed to
+          # match — no need to reverse-engineer Playwright's folder-naming).
+          MAP="$RUNNER_TEMP/test-info.tsv"
+          : > "$MAP"
+
+          shopt -s nullglob
+          for f in failures/tests/e2e-pw/test-results-*.json; do
+            jq -r '
+              .. | objects | select(has("tests")) as $spec |
+              $spec.tests[] | select(.status == "unexpected") as $test |
+              $test.results[] | select(.status == "failed") |
+              ([.attachments[]? | select(.name == "screenshot") | .path] | first // "") as $shot |
+              select($shot != "") |
+              [
+                ($shot | split("/") | .[-2]),
+                ($spec.title // "unknown"),
+                (.retry // 0 | tostring),
+                ((.error.message // "") | gsub("\n"; " ") | gsub("\t"; " "))
+              ] | @tsv
+            ' "$f" 2>/dev/null >> "$MAP" || true
+          done
+          shopt -u nullglob
+
+          echo "Parsed $(wc -l < "$MAP") failure(s) from test-results JSON."
+
       - name: Publish screenshots to gh-pages
         if: env.TRUSTED == '1'
         run: |
@@ -207,6 +241,12 @@ jobs:
 
           BODY="$RUNNER_TEMP/comment.md"
           RAW_BASE="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/gh-pages/reports/${DEST:-}"
+          MAP="$RUNNER_TEMP/test-info.tsv"
+
+          # Minimal HTML-escape — this text ends up inside an HTML block in
+          # the comment body, not a fenced code block, so raw `<`/`>`/`&`
+          # from an assertion message could otherwise break the layout.
+          html_escape() { sed -e 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g'; }
 
           {
             echo '<!-- aureus-playwright-report -->'
@@ -225,11 +265,32 @@ jobs:
                 [ "$rel" = "$png" ] && continue
                 case "$rel" in (*[!A-Za-z0-9._/-]*) continue ;; esac
                 case "/$rel/" in (*/../*) continue ;; esac
-                test_name="$(dirname "$rel")"
-                [ "$test_name" = "." ] && test_name="$(basename "$rel" .png)"
+                folder="$(dirname "$rel")"
+
+                # Look up the real title/error for this folder, if the JSON
+                # reporter produced one; fall back to the raw (hashed, not
+                # very readable) folder name so a screenshot never goes missing
+                # just because the lookup didn't match.
+                info="$([ -f "$MAP" ] && awk -F'\t' -v k="$folder" '$1==k{print;exit}' "$MAP" || true)"
+                if [ -n "$info" ]; then
+                  title="$(printf '%s' "$info" | cut -f2 | html_escape)"
+                  retry="$(printf '%s' "$info" | cut -f3)"
+                  error="$(printf '%s' "$info" | cut -f4- | html_escape)"
+                  test_name="$title"
+                  [ "$retry" != "0" ] && test_name="${test_name} (retry ${retry})"
+                else
+                  test_name="$(dirname "$rel")"
+                  [ "$test_name" = "." ] && test_name="$(basename "$rel" .png)"
+                  error=""
+                fi
+
                 echo "<details>"
                 echo "<summary>🔴 <code>${test_name}</code></summary>"
                 echo
+                if [ -n "$error" ]; then
+                  echo "<pre>${error}</pre>"
+                  echo
+                fi
                 echo "<img src=\"${RAW_BASE}/screens/${rel}\" alt=\"${test_name}\" width=\"650\" />"
                 echo
                 echo "</details>"
