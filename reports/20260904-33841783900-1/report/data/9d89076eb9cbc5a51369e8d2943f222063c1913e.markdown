@@ -1,0 +1,313 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#fi-main-content"
+  - navigation [ref=e4]:
+    - button [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+    - link "YourERP logo" [ref=e19] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - img "YourERP logo" [ref=e20]
+    - list [ref=e21]:
+      - listitem [ref=e22]:
+        - link "Inventory" [ref=e24] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/overview
+      - listitem [ref=e25]:
+        - link "Overview" [ref=e26] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/overview
+          - generic [ref=e27]: Overview
+      - listitem [ref=e28]:
+        - link "Operations" [ref=e29] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/operations
+          - generic [ref=e30]: Operations
+      - listitem [ref=e31]:
+        - link "Products" [ref=e32] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/products
+          - generic [ref=e33]: Products
+      - listitem [ref=e34]:
+        - link "Reporting" [ref=e35] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/reporting
+          - generic [ref=e36]: Reporting
+      - listitem [ref=e37]:
+        - link "Configurations" [ref=e38] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/configurations
+          - generic [ref=e39]: Configurations
+      - listitem [ref=e40]:
+        - link "Settings" [ref=e41] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/settings
+          - generic [ref=e42]: Settings
+    - generic [ref=e43]:
+      - generic [ref=e46]:
+        - generic [ref=e47]: Global search
+        - generic [ref=e48]:
+          - img [ref=e50]
+          - searchbox "Global search" [ref=e53]
+      - button "Notifications" [ref=e57] [cursor=pointer]:
+        - img [ref=e58]
+      - button "User menu" [ref=e62] [cursor=pointer]:
+        - img "Avatar of Example" [ref=e63]
+  - generic [ref=e64]:
+    - complementary [ref=e65]:
+      - navigation [ref=e66]:
+        - list [ref=e67]:
+          - list [ref=e68]:
+            - listitem [ref=e69]:
+              - link "Overview" [ref=e70] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/overview
+                - generic [ref=e71]: Overview
+            - listitem [ref=e72]:
+              - link "Operations" [ref=e73] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/operations
+                - generic [ref=e74]: Operations
+            - listitem [ref=e75]:
+              - link "Products" [ref=e76] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products
+                - generic [ref=e77]: Products
+            - listitem [ref=e78]:
+              - link "Reporting" [ref=e79] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/reporting
+                - generic [ref=e80]: Reporting
+            - listitem [ref=e81]:
+              - link "Configurations" [ref=e82] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/configurations
+                - generic [ref=e83]: Configurations
+            - listitem [ref=e84]:
+              - link "Settings" [ref=e85] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/settings
+                - generic [ref=e86]: Settings
+    - main [ref=e88]:
+      - generic [ref=e90]:
+        - generic [ref=e92]:
+          - navigation "Breadcrumb" [ref=e93]:
+            - list [ref=e94]:
+              - listitem [ref=e95]:
+                - link "Configurations" [ref=e96] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/inventory/configurations
+              - listitem [ref=e97]:
+                - img [ref=e98]
+                - link "Warehouses" [ref=e100] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/inventory/configurations/warehouses
+              - listitem [ref=e101]:
+                - img [ref=e102]
+                - generic [ref=e104]: Create
+          - heading "Create Warehouse" [level=1] [ref=e105]
+        - generic [ref=e106]:
+          - list [ref=e108]:
+            - listitem [ref=e109]:
+              - generic [ref=e110] [cursor=pointer]:
+                - generic [ref=e111]: Warehouse Management
+                - button "Warehouse Management" [expanded] [ref=e112]:
+                  - img [ref=e113]
+              - list [ref=e115]:
+                - listitem [ref=e116]:
+                  - link "Warehouses" [ref=e117] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/warehouses
+                    - img [ref=e118]
+                    - generic [ref=e120]: Warehouses
+                - listitem [ref=e121]:
+                  - link "Locations" [ref=e122] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/locations
+                    - img [ref=e123]
+                    - generic [ref=e126]: Locations
+                - listitem [ref=e127]:
+                  - link "Operation Types" [ref=e128] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/operation-types
+                    - img [ref=e129]
+                    - generic [ref=e131]: Operation Types
+                - listitem [ref=e132]:
+                  - link "Routes" [ref=e133] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/routes
+                    - img [ref=e134]
+                    - generic [ref=e136]: Routes
+                - listitem [ref=e137]:
+                  - link "Rules" [ref=e138] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/rules
+                    - img [ref=e139]
+                    - generic [ref=e141]: Rules
+                - listitem [ref=e142]:
+                  - link "Storage Categories" [ref=e143] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/storage-categories
+                    - img [ref=e144]
+                    - generic [ref=e146]: Storage Categories
+                - listitem [ref=e147]:
+                  - link "Putaway Rules" [ref=e148] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/putaway-rules
+                    - img [ref=e149]
+                    - generic [ref=e151]: Putaway Rules
+            - listitem [ref=e152]:
+              - generic [ref=e153] [cursor=pointer]:
+                - generic [ref=e154]: Products
+                - button "Products" [expanded] [ref=e155]:
+                  - img [ref=e156]
+              - list [ref=e158]:
+                - listitem [ref=e159]:
+                  - link "Categories" [ref=e160] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/product-categories
+                    - img [ref=e161]
+                    - generic [ref=e163]: Categories
+                - listitem [ref=e164]:
+                  - link "Attributes" [ref=e165] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/product-attributes
+                    - img [ref=e166]
+                    - generic [ref=e168]: Attributes
+                - listitem [ref=e169]:
+                  - link "Packagings" [ref=e170] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/packagings
+                    - img [ref=e171]
+                    - generic [ref=e173]: Packagings
+            - listitem [ref=e174]:
+              - generic [ref=e175] [cursor=pointer]:
+                - generic [ref=e176]: Delivery
+                - button "Delivery" [expanded] [ref=e177]:
+                  - img [ref=e178]
+              - list [ref=e180]:
+                - listitem [ref=e181]:
+                  - link "Package Types" [ref=e182] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/package-types
+                    - img [ref=e183]
+                    - generic [ref=e185]: Package Types
+            - listitem [ref=e186]:
+              - generic [ref=e187] [cursor=pointer]:
+                - generic [ref=e188]: Units of Measure
+                - button "Units of Measure" [expanded] [ref=e189]:
+                  - img [ref=e190]
+              - list [ref=e192]:
+                - listitem [ref=e193]:
+                  - link "UOM Categories" [ref=e194] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/configurations/u-o-m-categories
+                    - img [ref=e195]
+                    - generic [ref=e197]: UOM Categories
+          - generic [ref=e202]:
+            - generic [ref=e206]:
+              - region "General" [ref=e214]:
+                - heading "General" [level=2] [ref=e217]
+                - generic [ref=e219]:
+                  - generic [ref=e222]:
+                    - generic [ref=e226]:
+                      - text: Name
+                      - superscript [ref=e227]: "*"
+                    - textbox "Name*" [active] [ref=e231]:
+                      - /placeholder: eg. Central Warehouse
+                  - generic [ref=e234]:
+                    - generic [ref=e236]:
+                      - generic [ref=e238]:
+                        - text: Short Name
+                        - superscript [ref=e239]: "*"
+                      - generic [ref=e242]:
+                        - img [ref=e243]
+                        - generic [ref=e245]: The short name serves as an identifier for the warehouse.
+                    - textbox "Short Name*" [ref=e249]:
+                      - /placeholder: eg. CW
+                      - text: "97828"
+                  - generic [ref=e253]:
+                    - generic [ref=e256]:
+                      - generic [ref=e260]: Company
+                      - combobox "Company" [disabled] [ref=e264]:
+                        - option
+                        - option "My Company" [selected]
+                    - generic [ref=e267]:
+                      - generic [ref=e271]: Address
+                      - generic [ref=e273]:
+                        - generic [ref=e277]:
+                          - combobox "Address" [ref=e278] [cursor=pointer]:
+                            - generic [ref=e280]: Select an option
+                          - status [ref=e281]
+                        - button "Create" [ref=e284] [cursor=pointer]:
+                          - img [ref=e285]
+              - region "Settings" [ref=e294]:
+                - heading "Settings" [level=2] [ref=e297]
+                - generic [ref=e299]:
+                  - group "Shipment Management" [ref=e302]:
+                    - generic [ref=e303]: Shipment Management
+                    - generic [ref=e304]:
+                      - generic [ref=e307]:
+                        - generic [ref=e309]:
+                          - generic [ref=e311]: Incoming Shipments
+                          - generic [ref=e314]:
+                            - img [ref=e315]
+                            - generic [ref=e317]: Default incoming route to follow
+                        - radiogroup "Incoming Shipments" [ref=e319]:
+                          - generic [ref=e320]:
+                            - radio "One step Receive and Store (One step)" [ref=e321]
+                            - generic [ref=e322]:
+                              - paragraph [ref=e323]: One step
+                              - paragraph [ref=e324]: Receive and Store (One step)
+                          - generic [ref=e325]:
+                            - radio "Two steps Receive then Store (Two steps)" [checked] [ref=e326]
+                            - generic [ref=e327]:
+                              - paragraph [ref=e328]: Two steps
+                              - paragraph [ref=e329]: Receive then Store (Two steps)
+                          - generic [ref=e330]:
+                            - radio "Three steps Receive, Quality Control, then Store (Three steps)" [ref=e331]
+                            - generic [ref=e332]:
+                              - paragraph [ref=e333]: Three steps
+                              - paragraph [ref=e334]: Receive, Quality Control, then Store (Three steps)
+                      - generic [ref=e337]:
+                        - generic [ref=e339]:
+                          - generic [ref=e341]: Outgoing Shipments
+                          - generic [ref=e344]:
+                            - img [ref=e345]
+                            - generic [ref=e347]: Default outgoing route to follow
+                        - radiogroup "Outgoing Shipments" [ref=e349]:
+                          - generic [ref=e350]:
+                            - radio "One step Deliver (One step)" [ref=e351]
+                            - generic [ref=e352]:
+                              - paragraph [ref=e353]: One step
+                              - paragraph [ref=e354]: Deliver (One step)
+                          - generic [ref=e355]:
+                            - radio "Two steps Pick then Deliver (Two steps)" [checked] [ref=e356]
+                            - generic [ref=e357]:
+                              - paragraph [ref=e358]: Two steps
+                              - paragraph [ref=e359]: Pick then Deliver (Two steps)
+                          - generic [ref=e360]:
+                            - radio "Three steps Pick, Pack, then Deliver (Three steps)" [ref=e361]
+                            - generic [ref=e362]:
+                              - paragraph [ref=e363]: Three steps
+                              - paragraph [ref=e364]: Pick, Pack, then Deliver (Three steps)
+                  - group "Resupply Management" [ref=e367]:
+                    - generic [ref=e368]: Resupply Management
+                    - generic [ref=e372]:
+                      - generic [ref=e376]: Resupply From
+                      - group "Resupply From" [ref=e378]:
+                        - generic [ref=e379]:
+                          - generic [ref=e381]:
+                            - checkbox "WH Out 3-Step 1788501010245" [ref=e382]
+                            - generic [ref=e384]: WH Out 3-Step 1788501010245
+                          - generic [ref=e386]:
+                            - checkbox "Your Company" [ref=e387]
+                            - generic [ref=e389]: Your Company
+            - generic [ref=e394]:
+              - button "Create" [ref=e395] [cursor=pointer]:
+                - generic [ref=e396]: Create
+              - button "Create & create another" [ref=e397] [cursor=pointer]
+              - button "Cancel" [ref=e398] [cursor=pointer]
+  - generic:
+    - status
+  - generic [ref=e401]:
+    - generic [ref=e403]:
+      - generic [ref=e404] [cursor=pointer]:
+        - generic: Request
+      - generic [ref=e405] [cursor=pointer]:
+        - generic: Timeline
+      - generic [ref=e406] [cursor=pointer]:
+        - generic: Queries
+        - generic [ref=e407]: "17"
+      - generic [ref=e408] [cursor=pointer]:
+        - generic: Models
+        - generic [ref=e409]: "40"
+      - generic [ref=e410] [cursor=pointer]:
+        - generic: Livewire
+        - generic [ref=e411]: "1"
+    - generic [ref=e412]:
+      - generic [ref=e419] [cursor=pointer]:
+        - generic [ref=e420]: "5"
+        - generic [ref=e421]: POST /livewire-fb550f98/update
+      - generic [ref=e422] [cursor=pointer]:
+        - generic: 285ms
+      - generic [ref=e424] [cursor=pointer]:
+        - generic: 5MB
+      - generic [ref=e426] [cursor=pointer]:
+        - generic: 13.x
+```

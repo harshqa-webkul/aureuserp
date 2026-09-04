@@ -1,0 +1,282 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#fi-main-content"
+  - navigation [ref=e4]:
+    - button [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+    - link "YourERP logo" [ref=e19] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - img "YourERP logo" [ref=e20]
+    - list [ref=e21]:
+      - listitem [ref=e22]:
+        - link "Inventory" [ref=e24] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/overview
+      - listitem [ref=e25]:
+        - link "Overview" [ref=e26] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/overview
+          - generic [ref=e27]: Overview
+      - listitem [ref=e28]:
+        - link "Operations" [ref=e29] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/operations
+          - generic [ref=e30]: Operations
+      - listitem [ref=e31]:
+        - link "Products" [ref=e32] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/products
+          - generic [ref=e33]: Products
+      - listitem [ref=e34]:
+        - link "Reporting" [ref=e35] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/reporting
+          - generic [ref=e36]: Reporting
+      - listitem [ref=e37]:
+        - link "Configurations" [ref=e38] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/configurations
+          - generic [ref=e39]: Configurations
+      - listitem [ref=e40]:
+        - link "Settings" [ref=e41] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/inventory/settings
+          - generic [ref=e42]: Settings
+    - generic [ref=e43]:
+      - generic [ref=e46]:
+        - generic [ref=e47]: Global search
+        - generic [ref=e48]:
+          - img [ref=e50]
+          - searchbox "Global search" [ref=e53]
+      - button "Notifications" [ref=e57] [cursor=pointer]:
+        - img [ref=e58]
+      - button "User menu" [ref=e62] [cursor=pointer]:
+        - img "Avatar of Example" [ref=e63]
+  - generic [ref=e64]:
+    - complementary [ref=e65]:
+      - navigation [ref=e66]:
+        - list [ref=e67]:
+          - list [ref=e68]:
+            - listitem [ref=e69]:
+              - link "Overview" [ref=e70] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/overview
+                - generic [ref=e71]: Overview
+            - listitem [ref=e72]:
+              - link "Operations" [ref=e73] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/operations
+                - generic [ref=e74]: Operations
+            - listitem [ref=e75]:
+              - link "Products" [ref=e76] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/products
+                - generic [ref=e77]: Products
+            - listitem [ref=e78]:
+              - link "Reporting" [ref=e79] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/reporting
+                - generic [ref=e80]: Reporting
+            - listitem [ref=e81]:
+              - link "Configurations" [ref=e82] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/configurations
+                - generic [ref=e83]: Configurations
+            - listitem [ref=e84]:
+              - link "Settings" [ref=e85] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/inventory/settings
+                - generic [ref=e86]: Settings
+    - main [ref=e88]:
+      - generic [ref=e90]:
+        - generic [ref=e92]:
+          - navigation "Breadcrumb" [ref=e93]:
+            - list [ref=e94]:
+              - listitem [ref=e95]:
+                - link "Operations" [ref=e96] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/inventory/operations
+              - listitem [ref=e97]:
+                - img [ref=e98]
+                - link "Deliveries" [ref=e100] [cursor=pointer]:
+                  - /url: http://127.0.0.1:8000/admin/inventory/operations/deliveries
+              - listitem [ref=e101]:
+                - img [ref=e102]
+                - generic [ref=e104]: Create
+          - heading "Create Delivery" [level=1] [ref=e105]
+        - generic [ref=e106]:
+          - list [ref=e108]:
+            - listitem [ref=e109]:
+              - generic [ref=e110] [cursor=pointer]:
+                - generic [ref=e111]: Transfers
+                - button "Transfers" [expanded] [ref=e112]:
+                  - img [ref=e113]
+              - list [ref=e115]:
+                - listitem [ref=e116]:
+                  - link "Receipts" [ref=e117] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/operations/receipts
+                    - img [ref=e118]
+                    - generic [ref=e120]: Receipts
+                - listitem [ref=e121]:
+                  - link "Deliveries" [ref=e122] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/operations/deliveries
+                    - img [ref=e123]
+                    - generic [ref=e125]: Deliveries
+                - listitem [ref=e126]:
+                  - link "Internal Transfers" [ref=e127] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/operations/internals
+                    - img [ref=e128]
+                    - generic [ref=e130]: Internal Transfers
+                - listitem [ref=e131]:
+                  - link "Dropships" [ref=e132] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/operations/dropships
+                    - img [ref=e133]
+                    - generic [ref=e135]: Dropships
+            - listitem [ref=e136]:
+              - generic [ref=e137] [cursor=pointer]:
+                - generic [ref=e138]: Adjustments
+                - button "Adjustments" [expanded] [ref=e139]:
+                  - img [ref=e140]
+              - list [ref=e142]:
+                - listitem [ref=e143]:
+                  - link "Quantities" [ref=e144] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/operations/quantities
+                    - img [ref=e145]
+                    - generic [ref=e147]: Quantities
+                - listitem [ref=e148]:
+                  - link "Scraps" [ref=e149] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/inventory/operations/scraps
+                    - img [ref=e150]
+                    - generic [ref=e152]: Scraps
+          - generic [ref=e157]:
+            - generic [ref=e161]:
+              - generic [ref=e164]:
+                - generic [ref=e165]: State
+                - generic [ref=e167]:
+                  - generic [ref=e168]:
+                    - radio "Draft" [checked] [disabled]
+                    - generic: Draft
+                  - generic [ref=e169]:
+                    - radio "Waiting" [disabled]
+                    - generic: Waiting
+                  - generic [ref=e170]:
+                    - radio "Ready" [disabled]
+                    - generic: Ready
+                  - generic [ref=e171]:
+                    - radio "Done" [disabled]
+                    - generic: Done
+                  - generic [ref=e172]:
+                    - radio "Canceled" [disabled]
+                    - generic: Canceled
+              - region "General" [ref=e176]:
+                - heading "General" [level=2] [ref=e179]
+                - generic [ref=e181]:
+                  - generic [ref=e184]:
+                    - generic [ref=e188]: Delivery Address
+                    - generic [ref=e190]:
+                      - generic [ref=e194]:
+                        - combobox "Delivery Address" [ref=e195] [cursor=pointer]:
+                          - generic [ref=e197]: Select an option
+                        - status [ref=e198]
+                      - button "Create" [ref=e201] [cursor=pointer]:
+                        - img [ref=e202]
+                  - generic [ref=e206]:
+                    - generic [ref=e210]:
+                      - text: Operation Type
+                      - superscript [ref=e211]: "*"
+                    - generic [ref=e217]:
+                      - combobox "Operation Type*" [expanded] [ref=e218] [cursor=pointer]:
+                        - generic [ref=e220]: "Your Company: Delivery Orders"
+                      - listbox [ref=e221]:
+                        - textbox "Search" [active] [ref=e223]:
+                          - /placeholder: Start typing to search...
+                          - text: E2E BO Ask Type 1788502270605
+                        - generic [ref=e224]: No options match your search.
+                      - status [ref=e225]: No options match your search.
+                      - button "Clear selection" [ref=e226] [cursor=pointer]:
+                        - img [ref=e227]
+                  - generic [ref=e231]:
+                    - generic [ref=e235]:
+                      - text: Source Location
+                      - superscript [ref=e236]: "*"
+                    - generic [ref=e242]:
+                      - combobox "Source Location*" [ref=e243] [cursor=pointer]:
+                        - generic [ref=e245]: WH/Stock
+                      - status [ref=e246]
+                      - button "Clear selection" [ref=e247] [cursor=pointer]:
+                        - img [ref=e248]
+              - generic [ref=e252]:
+                - tablist [ref=e253]:
+                  - tab "Operations" [selected] [ref=e254] [cursor=pointer]:
+                    - generic [ref=e255]: Operations
+                  - tab "Additional" [ref=e256] [cursor=pointer]:
+                    - generic [ref=e257]: Additional
+                  - tab "Note" [ref=e258] [cursor=pointer]:
+                    - generic [ref=e259]: Note
+                - tabpanel "Moves Product * Packaging Demand * Picked Column manager Delete Add to moves" [ref=e260]:
+                  - generic [ref=e264]:
+                    - generic [ref=e265]: Moves
+                    - generic [ref=e266]:
+                      - table [ref=e268]:
+                        - rowgroup [ref=e269]:
+                          - row "Product * Packaging Demand * Picked Column manager" [ref=e270]:
+                            - columnheader "Product *" [ref=e271]:
+                              - generic [ref=e272]:
+                                - text: Product
+                                - superscript [ref=e273]: "*"
+                            - columnheader "Packaging" [ref=e275]:
+                              - generic [ref=e276]: Packaging
+                            - columnheader "Demand *" [ref=e278]:
+                              - generic [ref=e279]:
+                                - text: Demand
+                                - superscript [ref=e280]: "*"
+                            - columnheader "Picked" [ref=e282]:
+                              - generic [ref=e283]: Picked
+                            - columnheader "Column manager" [ref=e285]:
+                              - button "Column manager" [ref=e288] [cursor=pointer]:
+                                - img [ref=e289]
+                        - rowgroup [ref=e291]:
+                          - row "Delete" [ref=e292]:
+                            - cell [ref=e293]:
+                              - generic [ref=e300]:
+                                - combobox [ref=e301] [cursor=pointer]:
+                                  - generic [ref=e303]: Select an option
+                                - status [ref=e304]
+                            - cell [ref=e305]:
+                              - generic [ref=e312]:
+                                - combobox [ref=e313] [cursor=pointer]:
+                                  - generic [ref=e315]: Select an option
+                                - status [ref=e316]
+                            - cell [ref=e317]:
+                              - spinbutton [ref=e322]: "0"
+                            - cell [ref=e323]:
+                              - switch [ref=e326] [cursor=pointer]
+                            - cell "Delete" [ref=e327]:
+                              - button "Delete" [ref=e330] [cursor=pointer]:
+                                - img [ref=e331]
+                      - button "Add to moves" [ref=e335] [cursor=pointer]
+                - option "Select an option"
+                - option "As soon as possible" [selected]
+                - option "When all products are ready"
+            - generic [ref=e340]:
+              - button "Create" [ref=e341] [cursor=pointer]:
+                - generic [ref=e342]: Create
+              - button "Create & create another" [ref=e343] [cursor=pointer]
+              - button "Cancel" [ref=e344] [cursor=pointer]
+  - generic:
+    - status
+  - generic [ref=e347]:
+    - generic [ref=e349]:
+      - generic [ref=e350] [cursor=pointer]:
+        - generic: Request
+      - generic [ref=e351] [cursor=pointer]:
+        - generic: Timeline
+      - generic [ref=e352] [cursor=pointer]:
+        - generic: Queries
+        - generic [ref=e353]: "17"
+      - generic [ref=e354] [cursor=pointer]:
+        - generic: Models
+        - generic [ref=e355]: "40"
+      - generic [ref=e356] [cursor=pointer]:
+        - generic: Livewire
+        - generic [ref=e357]: "1"
+    - generic [ref=e358]:
+      - generic [ref=e365] [cursor=pointer]:
+        - generic [ref=e366]: "5"
+        - generic [ref=e367]: POST /livewire-f84df920/update
+      - generic [ref=e368] [cursor=pointer]:
+        - generic: 271ms
+      - generic [ref=e370] [cursor=pointer]:
+        - generic: 5MB
+      - generic [ref=e372] [cursor=pointer]:
+        - generic: 13.x
+```

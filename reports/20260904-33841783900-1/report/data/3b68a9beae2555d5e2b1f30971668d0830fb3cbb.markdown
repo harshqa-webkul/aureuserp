@@ -1,0 +1,309 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#fi-main-content"
+  - navigation [ref=e4]:
+    - button [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+    - link "YourERP logo" [ref=e19] [cursor=pointer]:
+      - /url: http://127.0.0.1:8000/admin
+      - img "YourERP logo" [ref=e20]
+    - list [ref=e21]:
+      - listitem [ref=e22]:
+        - link "Settings" [ref=e24] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/shield/roles
+      - listitem [ref=e25]:
+        - link "Roles" [ref=e26] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/shield/roles
+          - generic [ref=e27]: Roles
+      - listitem [ref=e28]:
+        - link "Companies" [ref=e29] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/companies
+          - generic [ref=e30]: Companies
+      - listitem [ref=e31]:
+        - link "Teams" [ref=e32] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/teams
+          - generic [ref=e33]: Teams
+      - listitem [ref=e34]:
+        - link "Users" [ref=e35] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/users
+          - generic [ref=e36]: Users
+      - listitem [ref=e37]:
+        - link "Custom Fields" [ref=e38] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/fields
+          - generic [ref=e39]: Custom Fields
+      - listitem [ref=e40]:
+        - link "Sequences" [ref=e41] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/sequences
+          - generic [ref=e42]: Sequences
+      - listitem [ref=e43]:
+        - link "Settings" [ref=e44] [cursor=pointer]:
+          - /url: http://127.0.0.1:8000/admin/settings
+          - generic [ref=e45]: Settings
+    - generic [ref=e46]:
+      - button "My Company" [ref=e50] [cursor=pointer]:
+        - generic [ref=e52]:
+          - img [ref=e53]
+          - generic [ref=e55]: My Company
+          - img [ref=e56]
+      - generic [ref=e60]:
+        - generic [ref=e61]: Global search
+        - generic [ref=e62]:
+          - img [ref=e64]
+          - searchbox "Global search" [ref=e67]
+      - generic [ref=e68]:
+        - button "Notifications" [disabled]:
+          - img
+      - button "User menu" [ref=e71] [cursor=pointer]:
+        - img "Avatar of Example" [ref=e72]
+  - generic [ref=e73]:
+    - complementary [ref=e74]:
+      - navigation [ref=e75]:
+        - list [ref=e76]:
+          - list [ref=e77]:
+            - listitem [ref=e78]:
+              - link "Roles" [ref=e79] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/shield/roles
+                - generic [ref=e80]: Roles
+            - listitem [ref=e81]:
+              - link "Companies" [ref=e82] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/companies
+                - generic [ref=e83]: Companies
+            - listitem [ref=e84]:
+              - link "Teams" [ref=e85] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/teams
+                - generic [ref=e86]: Teams
+            - listitem [ref=e87]:
+              - link "Users" [ref=e88] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/users
+                - generic [ref=e89]: Users
+            - listitem [ref=e90]:
+              - link "Custom Fields" [ref=e91] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/fields
+                - generic [ref=e92]: Custom Fields
+            - listitem [ref=e93]:
+              - link "Sequences" [ref=e94] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/sequences
+                - generic [ref=e95]: Sequences
+            - listitem [ref=e96]:
+              - link "Settings" [ref=e97] [cursor=pointer]:
+                - /url: http://127.0.0.1:8000/admin/settings
+                - generic [ref=e98]: Settings
+    - main [ref=e100]:
+      - generic [ref=e102]:
+        - generic [ref=e103]:
+          - generic [ref=e104]:
+            - navigation "Breadcrumb" [ref=e105]:
+              - list [ref=e106]:
+                - listitem [ref=e107]:
+                  - link "Companies" [ref=e108] [cursor=pointer]:
+                    - /url: http://127.0.0.1:8000/admin/companies
+                - listitem [ref=e109]:
+                  - img [ref=e110]
+                  - generic [ref=e112]: List
+            - heading "Companies" [level=1] [ref=e113]
+          - link "New Company" [ref=e116] [cursor=pointer]:
+            - /url: http://127.0.0.1:8000/admin/companies/create
+            - img [ref=e117]
+            - text: New Company
+        - generic [ref=e121]:
+          - tablist [ref=e125]:
+            - tab "All Companies 3" [selected] [ref=e126] [cursor=pointer]:
+              - generic [ref=e127]: All Companies
+              - generic [ref=e130]: "3"
+            - tab "Archived Companies 1" [ref=e131] [cursor=pointer]:
+              - generic [ref=e132]: Archived Companies
+              - generic [ref=e135]: "1"
+          - generic [ref=e140]:
+            - generic [ref=e142]:
+              - generic [ref=e143]:
+                - button "Reorder records" [ref=e144] [cursor=pointer]:
+                  - img [ref=e145]
+                - generic [ref=e150]:
+                  - generic [ref=e152]: Group by
+                  - combobox "Group by" [ref=e154]:
+                    - option "-" [selected]
+                    - option "Company Name"
+                    - option "City"
+                    - option "Country"
+                    - option "State"
+                    - option "Email"
+                    - option "Phone"
+                    - option "Currency"
+                    - option "support::filament/resources/company.table.groups.created-by"
+                    - option "Created At"
+                    - option "Updated At"
+              - generic [ref=e155]:
+                - generic [ref=e156]:
+                  - generic [ref=e157]: Search
+                  - generic [ref=e158]:
+                    - img [ref=e160]
+                    - searchbox "Search" [ref=e163]
+                - button "Filter" [ref=e166] [cursor=pointer]:
+                  - img [ref=e167]
+                  - generic [ref=e170]: "0"
+                - button "Column manager" [ref=e173] [cursor=pointer]:
+                  - img [ref=e174]
+            - generic [ref=e176]:
+              - status [ref=e177]: 3 results
+              - table "companies" [ref=e178]:
+                - rowgroup [ref=e179]:
+                  - row "Select/deselect all items for bulk actions. Logo Company Name Branches Email Currency Status Actions" [ref=e180]:
+                    - columnheader "Select/deselect all items for bulk actions." [ref=e181]:
+                      - checkbox "Select/deselect all items for bulk actions." [ref=e182]
+                    - columnheader "Logo" [ref=e183]
+                    - columnheader "Company Name" [ref=e184]:
+                      - button "Company Name" [ref=e185] [cursor=pointer]:
+                        - text: Company Name
+                        - img [ref=e186]
+                    - columnheader "Branches" [ref=e188]
+                    - columnheader "Email" [ref=e189]:
+                      - button "Email" [ref=e190] [cursor=pointer]:
+                        - text: Email
+                        - img [ref=e191]
+                    - columnheader "Currency" [ref=e193]:
+                      - button "Currency" [ref=e194] [cursor=pointer]:
+                        - text: Currency
+                        - img [ref=e195]
+                    - columnheader "Status" [ref=e197]:
+                      - button "Status" [ref=e198] [cursor=pointer]:
+                        - text: Status
+                        - img [ref=e199]
+                    - columnheader "Actions" [ref=e201]
+                - rowgroup [ref=e202]:
+                  - row "Select/deselect item 1 for bulk actions. My Company - info@mycompany.local United States dollar Yes Actions" [ref=e203]:
+                    - cell "Select/deselect item 1 for bulk actions." [ref=e204]:
+                      - checkbox "Select/deselect item 1 for bulk actions." [ref=e205]
+                    - cell [ref=e206]:
+                      - link [ref=e207] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/companies/1
+                    - cell "My Company" [ref=e209]:
+                      - link "My Company" [ref=e210] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/companies/1
+                        - generic [ref=e211]: My Company
+                    - cell "-" [ref=e212]:
+                      - link "-" [ref=e213] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/companies/1
+                        - paragraph [ref=e215]: "-"
+                    - cell "info@mycompany.local" [ref=e216]:
+                      - link "info@mycompany.local" [ref=e217] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/companies/1
+                        - generic [ref=e218]: info@mycompany.local
+                    - cell "United States dollar" [ref=e219]:
+                      - link "United States dollar" [ref=e220] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/companies/1
+                        - generic [ref=e221]: United States dollar
+                    - cell "Yes" [ref=e222]:
+                      - link "Yes" [ref=e223] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/companies/1
+                        - generic [ref=e224]:
+                          - img [ref=e225]
+                          - generic [ref=e227]: "Yes"
+                    - cell "Actions" [ref=e228]:
+                      - button "Actions" [ref=e232] [cursor=pointer]:
+                        - img [ref=e233]
+                  - row "Select/deselect item 2 for bulk actions. E2E Company 1788501826585 - company+1788501826585@example.com United States dollar Yes Actions" [ref=e235]:
+                    - cell "Select/deselect item 2 for bulk actions." [ref=e236]:
+                      - checkbox "Select/deselect item 2 for bulk actions." [ref=e237]
+                    - cell [ref=e238]:
+                      - link [ref=e239] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/companies/2
+                    - cell "E2E Company 1788501826585" [ref=e241]:
+                      - link "E2E Company 1788501826585" [ref=e242] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/companies/2
+                        - generic [ref=e243]: E2E Company 1788501826585
+                    - cell "-" [ref=e244]:
+                      - link "-" [ref=e245] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/companies/2
+                        - paragraph [ref=e247]: "-"
+                    - cell "company+1788501826585@example.com" [ref=e248]:
+                      - link "company+1788501826585@example.com" [ref=e249] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/companies/2
+                        - generic [ref=e250]: company+1788501826585@example.com
+                    - cell "United States dollar" [ref=e251]:
+                      - link "United States dollar" [ref=e252] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/companies/2
+                        - generic [ref=e253]: United States dollar
+                    - cell "Yes" [ref=e254]:
+                      - link "Yes" [ref=e255] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/companies/2
+                        - generic [ref=e256]:
+                          - img [ref=e257]
+                          - generic [ref=e259]: "Yes"
+                    - cell "Actions" [ref=e260]:
+                      - button "Actions" [ref=e264] [cursor=pointer]:
+                        - img [ref=e265]
+                  - row "Select/deselect item 3 for bulk actions. E2E Edited Company 1788501835025 - edit+1788501835025@example.com United States dollar Yes Actions" [ref=e267]:
+                    - cell "Select/deselect item 3 for bulk actions." [ref=e268]:
+                      - checkbox "Select/deselect item 3 for bulk actions." [ref=e269]
+                    - cell [ref=e270]:
+                      - link [ref=e271] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/companies/3
+                    - cell "E2E Edited Company 1788501835025" [ref=e273]:
+                      - link "E2E Edited Company 1788501835025" [ref=e274] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/companies/3
+                        - generic [ref=e275]: E2E Edited Company 1788501835025
+                    - cell "-" [ref=e276]:
+                      - link "-" [ref=e277] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/companies/3
+                        - paragraph [ref=e279]: "-"
+                    - cell "edit+1788501835025@example.com" [ref=e280]:
+                      - link "edit+1788501835025@example.com" [ref=e281] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/companies/3
+                        - generic [ref=e282]: edit+1788501835025@example.com
+                    - cell "United States dollar" [ref=e283]:
+                      - link "United States dollar" [ref=e284] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/companies/3
+                        - generic [ref=e285]: United States dollar
+                    - cell "Yes" [ref=e286]:
+                      - link "Yes" [ref=e287] [cursor=pointer]:
+                        - /url: http://127.0.0.1:8000/admin/companies/3
+                        - generic [ref=e288]:
+                          - img [ref=e289]
+                          - generic [ref=e291]: "Yes"
+                    - cell "Actions" [ref=e292]:
+                      - button "Actions" [ref=e296] [cursor=pointer]:
+                        - img [ref=e297]
+            - navigation "Pagination navigation" [ref=e299]:
+              - generic [ref=e300]: Showing 1 to 3 of 3 results
+              - generic [ref=e303]:
+                - generic [ref=e305]: Per page
+                - combobox "Per page" [ref=e307]:
+                  - option "5"
+                  - option "10" [selected]
+                  - option "25"
+                  - option "50"
+  - generic:
+    - status
+  - generic [ref=e310]:
+    - generic [ref=e312]:
+      - generic [ref=e313] [cursor=pointer]:
+        - generic: Request
+      - generic [ref=e314] [cursor=pointer]:
+        - generic: Timeline
+      - generic [ref=e315] [cursor=pointer]:
+        - generic: Views
+        - generic [ref=e316]: "11"
+      - generic [ref=e317] [cursor=pointer]:
+        - generic: Queries
+        - generic [ref=e318]: "36"
+      - generic [ref=e319] [cursor=pointer]:
+        - generic: Models
+        - generic [ref=e320]: "53"
+      - generic [ref=e321] [cursor=pointer]:
+        - generic: Livewire
+        - generic [ref=e322]: "6"
+      - generic [ref=e323] [cursor=pointer]:
+        - generic: Gate
+        - generic [ref=e324]: "74"
+    - generic [ref=e325]:
+      - generic [ref=e333] [cursor=pointer]: GET /admin/companies
+      - generic [ref=e334] [cursor=pointer]:
+        - generic: 525ms
+      - generic [ref=e336] [cursor=pointer]:
+        - generic: 11MB
+      - generic [ref=e338] [cursor=pointer]:
+        - generic: 13.x
+```
