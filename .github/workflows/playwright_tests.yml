@@ -21,9 +21,13 @@ jobs:
       matrix:
         php-versions: [8.3]
         node-version: ["22.13.1"]
-        shard_index: [1, 2, 3, 4, 5, 6]
-        shard_total: [6]
-        db: [mysql, pgsql]
+        # TEMPORARY — for fast iteration while testing the Playwright Report
+        # workflow only. Real matrix is 6 shards x [mysql, pgsql] (12 jobs);
+        # revert to that (and drop the path filter in "Run All Playwright
+        # Tests" below) before this is used for anything but this testing.
+        shard_index: [1]
+        shard_total: [1]
+        db: [mysql]
         include:
           - db: mysql
             db-label: MySQL
@@ -181,7 +185,9 @@ jobs:
         env:
           BASE_URL: "http://127.0.0.1:8000"
         run: |
-          npx playwright test --config=playwright.config.ts --shard=${{ matrix.shard_index }}/${{ matrix.shard_total }}
+          # TEMPORARY path filter (see matrix comment above) — only runs the
+          # one spec file with our intentional failure, instead of the whole suite.
+          npx playwright test --config=playwright.config.ts tests/02_companies/01_companies.spec.ts --shard=${{ matrix.shard_index }}/${{ matrix.shard_total }}
         working-directory: tests/e2e-pw
 
       - name: Upload Blob Report

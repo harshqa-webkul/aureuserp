@@ -1,25 +1,46 @@
 name: Playwright Report
 
 # Runs after "Playwright Tests" finishes. On a failed run it:
-#   1. publishes the failure screenshots and the merged HTML report to the
+#   1. publishes only the failure SCREENSHOTS (not the full HTML report —
+#      videos/traces are heavy and are what made gh-pages balloon past 2GB
+#      and start failing pushes; see the incident this fixes) to the
 #      `gh-pages` branch, and
 #   2. posts (and keeps updating) a single PR comment that shows each failed
-#      test's screenshot inline, plus a link to the full browsable report.
+#      test's screenshot inline. The full report + video/trace, if you need
+#      them, are still in the run's own artifacts (7-day retention) via the
+#      "run artifacts" link in the comment.
 #
 # So anyone working on the PR sees what broke directly on the PR — no artifact
-# zip to download.
+# zip to download for the common case.
+#
+# Safety limits on the gh-pages payload (both needed — one alone isn't enough,
+# see the incident this fixes):
+#   - time-based: reports older than 14 days are pruned on every publish.
+#   - size-based: if the branch is still over SIZE_CAP_MB after that, the
+#     oldest report folders are removed (oldest-first) until it fits. This is
+#     the backstop for a burst of failures inside the 14-day window.
+#
+# Publishing is gated on the PR author's `author_association` (see the
+# "Check contributor trust" step), not on head repo == base repo — in this
+# project EVERY PR, including the team's own, comes from a personal fork
+# (checked: the last 15 PRs on aureuserp/aureuserp are 100% fork-based), so a
+# same-repo-only gate would silently disable this for every real PR. A
+# workflow_run has a write token even when the underlying run came from a
+# fork, so without some gate here, an unknown external contributor's fork PR
+# could get their test output published under this repo's own domain and
+# commented on with a write-scoped bot identity — that's the actual risk this
+# guards against, not "did it come from a fork".
 #
 # Why workflow_run instead of doing this inside playwright_tests.yml:
 #   A workflow triggered by `pull_request` from a fork gets a READ-ONLY token,
 #   so it cannot push to gh-pages or comment. `workflow_run` runs in the base
-#   repo's context with a write token, so it works for fork PRs too. The catch
-#   GitHub enforces: a workflow_run workflow only runs from the copy of this
-#   file that lives on the base repo's DEFAULT branch. It will therefore not run
-#   for the PR that introduces it — it starts working once merged to master.
+#   repo's context with a write token, so it works for fork PRs too (subject
+#   to the trust gate above). The catch GitHub enforces: a workflow_run
+#   workflow only runs from the copy of this file that lives on the base
+#   repo's DEFAULT branch. It will therefore not run for the PR that
+#   introduces it — it starts working once merged to master.
 #
 # The inline screenshots render with no extra setup (raw.githubusercontent.com).
-# The "full report" link only renders once an admin enables GitHub Pages:
-#   Settings -> Pages -> Deploy from a branch -> `gh-pages` / root
 
 on:
   workflow_run:
@@ -27,7 +48,7 @@ on:
     types: [completed]
 
 permissions:
-  contents: write # push screenshots/report to the gh-pages branch
+  contents: write # push screenshots to the gh-pages branch
   pull-requests: write # post/update the PR comment
   actions: read # download artifacts from the test run
 
@@ -44,9 +65,42 @@ jobs:
       RUN_NUMBER: ${{ github.event.workflow_run.run_number }}
       RUN_URL: ${{ github.event.workflow_run.html_url }}
       HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+      TRUSTED: "0" # overwritten by "Check contributor trust" below
 
     steps:
+      - name: Check contributor trust
+        run: |
+          set -euo pipefail
+
+          PR_NUMBER="$(gh api "repos/${GITHUB_REPOSITORY}/commits/${HEAD_SHA}/pulls" \
+            --jq '[.[] | select(.state == "open")][0].number' 2>/dev/null || true)"
+
+          if [ -z "$PR_NUMBER" ] || [ "$PR_NUMBER" = "null" ]; then
+            echo "No open pull request found for ${HEAD_SHA}; nothing to publish to."
+            echo "TRUSTED=0" >> "$GITHUB_ENV"
+            exit 0
+          fi
+          echo "PR_NUMBER=${PR_NUMBER}" >> "$GITHUB_ENV"
+
+          # Gate on the PR author's relationship to the repo, not on which
+          # repo the branch happens to live in — every PR here comes from a
+          # personal fork (team members included), so "same repo" would
+          # reject everyone. OWNER/MEMBER/COLLABORATOR are people who already
+          # have write access to this repo by other means, so publishing
+          # their test output here adds no new exposure. Anyone else
+          # (CONTRIBUTOR, FIRST_TIME_CONTRIBUTOR, NONE, ...) is treated as
+          # untrusted and gets no published screenshots/comment.
+          ASSOCIATION="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}" \
+            --jq '.author_association' 2>/dev/null || true)"
+          echo "PR #${PR_NUMBER} author_association: ${ASSOCIATION:-unknown}"
+
+          case "$ASSOCIATION" in
+            OWNER | MEMBER | COLLABORATOR) echo "TRUSTED=1" >> "$GITHUB_ENV" ;;
+            *) echo "TRUSTED=0" >> "$GITHUB_ENV" ;;
+          esac
+
       - name: Download failure screenshots
+        if: env.TRUSTED == '1'
         continue-on-error: true
         uses: actions/download-artifact@v4
         with:
@@ -56,17 +110,8 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ github.token }}
 
-      - name: Download merged HTML report
-        continue-on-error: true
-        uses: actions/download-artifact@v4
-        with:
-          pattern: playwright-report-*
-          path: html-report
-          merge-multiple: true
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ github.token }}
-
-      - name: Publish screenshots & report to gh-pages
+      - name: Publish screenshots to gh-pages
+        if: env.TRUSTED == '1'
         run: |
           set -euo pipefail
 
@@ -91,20 +136,7 @@ jobs:
           done < <(find failures/tests/e2e-pw/test-results -type f -name '*.png' -print0 2>/dev/null)
           echo "SCREEN_COUNT=${COUNT}" >> "$GITHUB_ENV"
 
-          # Publish the full HTML report (screenshots + videos + traces).
-          # NOTE: this hosts report HTML on the repo's Pages domain. For a public
-          # repo taking PRs from untrusted forks you may want to gate this to
-          # same-repo runs only by wrapping the block below in:
-          #   if [ "${{ github.event.workflow_run.head_repository.full_name }}" = "$GITHUB_REPOSITORY" ]; then ... fi
-          HAS_REPORT=0
-          if [ -f html-report/index.html ]; then
-            mkdir -p "$STAGE/report"
-            cp -r html-report/. "$STAGE/report/"
-            HAS_REPORT=1
-          fi
-          echo "HAS_REPORT=${HAS_REPORT}" >> "$GITHUB_ENV"
-
-          if [ "$COUNT" -eq 0 ] && [ "$HAS_REPORT" -eq 0 ]; then
+          if [ "$COUNT" -eq 0 ]; then
             echo "Nothing to publish."
             echo "PUBLISHED=0" >> "$GITHUB_ENV"
             exit 0
@@ -112,6 +144,7 @@ jobs:
 
           REMOTE="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           CUTOFF="$(date -u -d '14 days ago' +%Y%m%d)"
+          SIZE_CAP_MB=200 # hard backstop — see "Safety limits" note at the top of this file
 
           # gh-pages is kept as a single commit (recreated + force-pushed each
           # time) so its history never grows; reports older than 14 days are
@@ -135,6 +168,18 @@ jobs:
               fi
             done
 
+            # Backstop: the 14-day prune above is time-based only, so a burst
+            # of failures inside that window can still balloon the branch (this
+            # is exactly what previously made every push fail with an HTTP 500
+            # mid-transfer). Drop the OLDEST report folders — oldest-first,
+            # since folder names are date-prefixed and sort chronologically —
+            # until the branch is back under SIZE_CAP_MB.
+            while [ "$(du -sm "$PUB" 2>/dev/null | cut -f1)" -gt "$SIZE_CAP_MB" ]; do
+              oldest="$(find "$PUB/reports" -mindepth 1 -maxdepth 1 -type d 2>/dev/null | sort | head -n1)"
+              [ -z "$oldest" ] && break
+              rm -rf "$oldest"
+            done
+
             mkdir -p "$PUB/reports/$DEST"
             cp -r "$STAGE/." "$PUB/reports/$DEST/"
             touch "$PUB/.nojekyll"
@@ -156,12 +201,12 @@ jobs:
           exit 1
 
       - name: Build comment body
+        if: env.TRUSTED == '1'
         run: |
           set -euo pipefail
 
           BODY="$RUNNER_TEMP/comment.md"
           RAW_BASE="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/gh-pages/reports/${DEST:-}"
-          PAGES_URL="$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq '.html_url' 2>/dev/null || true)"
 
           {
             echo '<!-- aureus-playwright-report -->'
@@ -169,17 +214,6 @@ jobs:
             echo
             echo "Failure at \`${HEAD_SHA:0:7}\`."
             echo
-
-            if [ "${HAS_REPORT:-0}" = "1" ] && [ "${PUBLISHED:-0}" = "1" ]; then
-              if [ -n "$PAGES_URL" ]; then
-                echo "### 📊 [Open the full HTML report](${PAGES_URL%/}/reports/${DEST}/report/index.html)"
-                echo
-                echo "Screenshots, videos and traces of every failure — viewable in the browser, no download needed."
-              else
-                echo "_The full HTML report was published to the \`gh-pages\` branch. A repo admin can enable GitHub Pages (Settings → Pages → deploy from \`gh-pages\`) to make it browsable online._"
-              fi
-              echo
-            fi
 
             if [ "${SCREEN_COUNT:-0}" -gt 0 ] && [ "${PUBLISHED:-0}" = "1" ]; then
               echo "### 🖼️ Failure screenshots (${SCREEN_COUNT})"
@@ -193,9 +227,7 @@ jobs:
                 case "/$rel/" in (*/../*) continue ;; esac
                 test_name="$(dirname "$rel")"
                 [ "$test_name" = "." ] && test_name="$(basename "$rel" .png)"
-                open_attr=""
-                [ "$shown" -lt 2 ] && open_attr=" open"
-                echo "<details${open_attr}>"
+                echo "<details>"
                 echo "<summary>🔴 <code>${test_name}</code></summary>"
                 echo
                 echo "<img src=\"${RAW_BASE}/screens/${rel}\" alt=\"${test_name}\" width=\"650\" />"
@@ -205,31 +237,28 @@ jobs:
               done < <(find failures/tests/e2e-pw/test-results -type f -name '*.png' -print0 2>/dev/null | sort -z)
               if [ "${SCREEN_COUNT}" -gt 20 ]; then
                 echo
-                echo "_…and $((SCREEN_COUNT - 20)) more — see the full report or the [run artifacts](${RUN_URL})._"
+                echo "_…and $((SCREEN_COUNT - 20)) more — see the [run artifacts](${RUN_URL}) for the rest._"
               fi
               echo
-              echo "<sub>Screenshots are kept for 14 days. Videos and traces are in the report above and in the [run artifacts](${RUN_URL}).</sub>"
+              echo "<sub>Screenshots are kept for up to 14 days (sooner if the branch fills up). The full report, video and trace are in the [run artifacts](${RUN_URL}) for 7 days.</sub>"
             else
               echo "_No failure screenshots were captured — the run may have failed before the tests started. Check the [run logs](${RUN_URL})._"
             fi
           } > "$BODY"
 
       - name: Write run summary
+        if: env.TRUSTED == '1'
         run: cat "$RUNNER_TEMP/comment.md" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Comment on the pull request
+        if: env.TRUSTED == '1'
         run: |
           set -euo pipefail
 
           BODY="$RUNNER_TEMP/comment.md"
 
-          PR_NUMBER="$(gh api "repos/${GITHUB_REPOSITORY}/commits/${HEAD_SHA}/pulls" \
-            --jq '[.[] | select(.state == "open")][0].number' 2>/dev/null || true)"
-
-          if [ -z "$PR_NUMBER" ] || [ "$PR_NUMBER" = "null" ]; then
-            echo "No open pull request found for ${HEAD_SHA}; the report is in the run summary instead."
-            exit 0
-          fi
+          # PR_NUMBER was already resolved (and the author already vetted) in
+          # "Check contributor trust" above — no need to look it up again.
 
           # Find an existing report comment so we update it in place (one sticky
           # comment per PR) instead of posting a new one every run.
