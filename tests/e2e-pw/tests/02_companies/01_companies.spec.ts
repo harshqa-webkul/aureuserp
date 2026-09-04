@@ -64,5 +64,9 @@ test.describe("Companies Module E2E", () => {
         }
         await companyPage.bulkDeleteCompanies(companyNames);
         await companyPage.gotoCompaniesPage();
+
+        // Intentional failure — verifying the Playwright Report workflow
+        // auto-attaches a failure screenshot to the PR (see PR #1309).
+        expect(true).toBe(false);
     });
 });
